@@ -8,6 +8,7 @@ body {
   /* Development background and font colors - easy on the eyes, lets me know if I'm looking at the wrong version */
   font-family: 'Source Sans Pro', sans-serif; /* Google Font added from CDN, with sans-serif fallback */
   font-display:auto;
+  src: url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
 
 }
 h1 {
