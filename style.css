@@ -1,11 +1,11 @@
 body {
   background-color: rgb(210,230,255);
-  font-family: 'Source Sans Pro', sans-serif;
-  color:rgb(20,20,20);
+  font-family: 'Source Sans Pro', sans-serif; /* Google Font added from CDN, with sans-serif fallback */
+  color:rgb(20,20,20); /* Primary font color is a very dark gray */
 }
 h1 {
   text-align:center;
-  text-shadow: -1px 1px silver;
+  text-shadow: -1px 1px silver; /* Header shadowing */
 }
 #main {
   background-color:rgb(250,250,250);
@@ -13,14 +13,16 @@ h1 {
   border:50px;
   border-radius:20px;
   margin:5%;
+  /* Shadowing for primary <div> */
   -webkit-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
   box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
-  overflow:hidden;
 }
 #content {
-  float:left;
+
 }
+
+/* Style to position graph div floated to the right */
 #graph {
-  float:right;
+
 }
