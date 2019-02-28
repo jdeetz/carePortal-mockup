@@ -27,8 +27,6 @@ for(var i = 0;i<30;i++) {
 
 function draw() {
   background(250,250,250);
-  ellipse(50, 50, 80, 80);
-  ellipse(50, 100, 80, 80);
   for(var i = 0;i<activityData.length;i++) {
       for(var j = 0;j<activityData[i].length;j++) {
           fill(activityData[i][j], 0, 0);
@@ -42,3 +40,45 @@ function draw() {
       }
   }
 }
+
+var steps = [];
+var displayRange = 30;
+for(var i = 0;i<180;i++) {
+    steps[i] = random(0,6000);
+}
+var stepMean = function() {
+    var total = 0;
+    for(var i = 0;i<steps.length;i++) {
+        total+=steps[i];
+    }
+    total = total / steps.length;
+    return total;
+};
+
+var mapped = function(val) {
+    return map(val,0,6000,0,400);
+};
+var incrementer = 1;
+var curCol = 0;
+var draw = function() {
+    background(curCol);
+    curCol+=incrementer;
+    if(curCol > 255 || curCol < 1) {
+        incrementer = -incrementer;
+    }
+    stroke(0, 13, 255);
+    strokeWeight(6);
+    line(0,mapped(stepMean()),400,mapped(stepMean()));
+    strokeWeight(1);
+    for(var i = 0;i<steps.length;i++) {
+        if(steps[i] < stepMean()) {
+            stroke(0, 255, 0);
+        } else {
+            stroke(255, 0, 0);
+        }
+        line(i*(400/steps.length),map(steps[i],0,6000,0,400),i*(400/steps.length),400);
+    }
+    textSize(39);
+    fill(0, 204, 255);
+    text("Average steps: " + floor(stepMean()),10,mapped(stepMean())-10);
+};
