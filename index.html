@@ -5,46 +5,31 @@
     <title>Care Ecosystem Portal Demo</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-    <style media="screen" type="text/css">
-      body {
-        background-color: rgb(210,230,255);
-        font-family: 'Source Sans Pro', sans-serif;
-        color:rgb(20,20,20);
-      }
-      h1 {
-        text-align:center;
-        text-shadow: -1px 1px silver;
-      }
-      #main {
-        background-color:rgb(250,250,250);
-        padding:20px;
-        border:50px;
-        border-radius:20px;
-        margin:15%;
-        -webkit-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
-        -moz-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
-        box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+    <script type="text/javascript" src="sketch.js"></script>
   </head>
   <body>
     <div id="main">
       <h1>Welcome to the CareEcosystem Caretaker Portal Demo</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lobortis fermentum nunc a sodales. Quisque vestibulum tincidunt justo quis hendrerit. Morbi laoreet libero ac mi fringilla, sit amet volutpat ante vestibulum. Pellentesque aliquet dolor nec mi eleifend placerat. Mauris hendrerit elit nec tortor finibus, eu posuere erat pellentesque. Maecenas vel magna luctus, pharetra tellus a, imperdiet magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis eget imperdiet ex. Duis convallis, leo id fermentum posuere, nibh nisi placerat orci, id fringilla ipsum leo at ligula.
-      </p>
-      <p>
-        Curabitur mauris dui, condimentum sed nisl vel, lobortis rhoncus enim. Ut sapien metus, rutrum eget commodo ac, consectetur ac mauris. Nunc id pulvinar erat. Sed massa nisi, dapibus vitae velit sit amet, dignissim convallis nibh. Nulla at ipsum tortor. Fusce ut pulvinar eros, eu semper nunc. Proin tincidunt viverra nunc, et euismod neque congue et. In hac habitasse platea dictumst. Ut ut varius enim. Mauris sit amet maximus felis. In vitae dapibus eros.
-      </p>
-      <p>
-        Ut sed ipsum convallis, placerat quam sed, convallis urna. Curabitur aliquam augue id mauris congue, sit amet posuere massa pellentesque. Sed scelerisque est in nisi mollis molestie. Praesent ultrices sapien metus, et hendrerit nisi congue sed. Nunc vel felis augue. Vestibulum tincidunt eros tellus, vitae tincidunt mauris aliquet vel. Proin luctus leo eu ex auctor interdum. Pellentesque interdum varius pharetra. Donec blandit velit mi, id faucibus nisi aliquam sed. Aenean magna dolor, ultrices nec libero vel, volutpat condimentum urna.
-      </p>
-      <p>
-        Aenean orci tortor, fermentum eget tincidunt non, iaculis nec lacus. Duis faucibus magna cursus nisl mattis convallis. Quisque velit turpis, ultricies eget lacus et, feugiat porttitor ligula. Nunc ornare, tortor vitae viverra imperdiet, nisl arcu sagittis arcu, iaculis auctor nibh mauris eget purus. Curabitur sem nibh, faucibus et venenatis id, cursus et nisi. Donec sit amet condimentum nunc. Nam scelerisque, leo ut consectetur vehicula, libero orci porta risus, at auctor leo ante nec lorem. Cras pellentesque lacus in malesuada porttitor. Vestibulum aliquet eros nec nisi cursus laoreet. Duis vel eleifend nunc.
-      </p>
-      <p>
-        Sed vitae rutrum ligula, non tincidunt quam. Nulla dictum mi suscipit, aliquam sem non, scelerisque nibh. Phasellus ultricies vehicula vulputate. In orci neque, porttitor eget facilisis ac, blandit et neque. Aliquam ac ipsum ut arcu ultricies iaculis at quis ipsum. Nulla placerat sed tellus a rutrum. Donec feugiat hendrerit augue. Phasellus rutrum eros non tristique egestas.
-      </p>
+      <span id="content">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis lobortis fermentum nunc a sodales. Quisque vestibulum tincidunt justo quis hendrerit. Morbi laoreet libero ac mi fringilla, sit amet volutpat ante vestibulum. Pellentesque aliquet dolor nec mi eleifend placerat. Mauris hendrerit elit nec tortor finibus, eu posuere erat pellentesque. Maecenas vel magna luctus, pharetra tellus a, imperdiet magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis eget imperdiet ex. Duis convallis, leo id fermentum posuere, nibh nisi placerat orci, id fringilla ipsum leo at ligula.
+        </p>
+        <p>
+          Curabitur mauris dui, condimentum sed nisl vel, lobortis rhoncus enim. Ut sapien metus, rutrum eget commodo ac, consectetur ac mauris. Nunc id pulvinar erat. Sed massa nisi, dapibus vitae velit sit amet, dignissim convallis nibh. Nulla at ipsum tortor. Fusce ut pulvinar eros, eu semper nunc. Proin tincidunt viverra nunc, et euismod neque congue et. In hac habitasse platea dictumst. Ut ut varius enim. Mauris sit amet maximus felis. In vitae dapibus eros.
+        </p>
+        <p>
+          Ut sed ipsum convallis, placerat quam sed, convallis urna. Curabitur aliquam augue id mauris congue, sit amet posuere massa pellentesque. Sed scelerisque est in nisi mollis molestie. Praesent ultrices sapien metus, et hendrerit nisi congue sed. Nunc vel felis augue. Vestibulum tincidunt eros tellus, vitae tincidunt mauris aliquet vel. Proin luctus leo eu ex auctor interdum. Pellentesque interdum varius pharetra. Donec blandit velit mi, id faucibus nisi aliquam sed. Aenean magna dolor, ultrices nec libero vel, volutpat condimentum urna.
+        </p>
+        <p>
+          Aenean orci tortor, fermentum eget tincidunt non, iaculis nec lacus. Duis faucibus magna cursus nisl mattis convallis. Quisque velit turpis, ultricies eget lacus et, feugiat porttitor ligula. Nunc ornare, tortor vitae viverra imperdiet, nisl arcu sagittis arcu, iaculis auctor nibh mauris eget purus. Curabitur sem nibh, faucibus et venenatis id, cursus et nisi. Donec sit amet condimentum nunc. Nam scelerisque, leo ut consectetur vehicula, libero orci porta risus, at auctor leo ante nec lorem. Cras pellentesque lacus in malesuada porttitor. Vestibulum aliquet eros nec nisi cursus laoreet. Duis vel eleifend nunc.
+        </p>
+        <p>
+          Sed vitae rutrum ligula, non tincidunt quam. Nulla dictum mi suscipit, aliquam sem non, scelerisque nibh. Phasellus ultricies vehicula vulputate. In orci neque, porttitor eget facilisis ac, blandit et neque. Aliquam ac ipsum ut arcu ultricies iaculis at quis ipsum. Nulla placerat sed tellus a rutrum. Donec feugiat hendrerit augue. Phasellus rutrum eros non tristique egestas.
+        </p>
+
+      </span>
+      <span id="graph"></span>
     </div>
   </body>
 </html>
