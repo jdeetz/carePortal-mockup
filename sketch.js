@@ -60,6 +60,7 @@ var mapped = function(val) {
 };
 var incrementer = 1;
 var curCol = 0;
+/*
 var draw = function() {
     background(curCol);
     curCol+=incrementer;
@@ -81,4 +82,4 @@ var draw = function() {
     textSize(39);
     fill(0, 204, 255);
     text("Average steps: " + floor(stepMean()),10,mapped(stepMean())-10);
-};
+};*/
