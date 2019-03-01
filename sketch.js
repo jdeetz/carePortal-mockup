@@ -9,19 +9,35 @@ function setup() {
     canvas.parent('graph'); //Moves graph from end-of-body to an in-page node for inline display
 }
 
+var stepData = [];
+var activityData = [];
+var lifeSpaceData = [];
+
+var Heatmap = function() {
+
+}
+
+Heatmap.prototype.render(range) {
+
+}
+
+var Stepgraph = function() {
+
+}
+
+Stepgraph.prototype.render(range) {
+
+}
+
+var LifespaceDelta = function() {
+
+}
+
+LifespaceDelta.prototype.render(range) {
+
+}
+
 //This is the draw loop, it's called recurrently at ~30fps
-var circleX = 200;
-var circleXMovement = -1;
-var circleY = 190;
-var circleYMovement = -1;
 function draw() {
-  circleX += circleXMovement;
-  circleY += circleYMovement+0.3;
-  if(circleX > 400 || circleX < 0) {
-    circleXMovement = -circleXMovement;
-  }
-  if(circleY > 400 || circleY < 0) {
-    circleYMovement = -circleYMovement;
-  }
-  ellipse(circleX,circleY,20,20); //adding a bouncing ellipse to test rendering effect on page load
+
 }
