@@ -9,9 +9,25 @@ function setup() {
 	canvas.parent('content'); //Moves graph from end-of-body to an in-page node for inline display
 }
 
-var stepData = [];
-var activityData = [];
-var lifeSpaceData = [];
+//These are data structure helper functions for the different types of data;
+
+//This is the helper function for step data, and will give the data as an array or array of arrays in a custom object type that
+//allows for easier iteration through the data
+var StepData = function() {
+
+};
+
+//Same deal for activity data
+var ActivityData = function() {
+
+};
+
+//And for lifeSpace(tm) data
+var LifeSpaceData = function() {
+
+};
+
+
 
 var Heatmap = function(data) {
 
@@ -39,5 +55,5 @@ LifespaceDelta.prototype.render = function(range) {
 
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-	
+
 }
