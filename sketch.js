@@ -39,6 +39,23 @@ var mapArray = function(inputArray,min,max) {
 	return mappedValues;
 };
 
+var map2dArray = function(inputArray,minX,maxX,minY,maxY) {
+	var xArray = [];
+	var yArray = [];
+	for(var i = 0;i<inputArray.length;i++) {
+		xArray[i] = inputArray[i][0];
+		yArray[i] = inputArray[i][1];
+	}
+	var mappedX = mapArray(xArray,minX,maxX);
+	var mappedY = mapArray(yArray,minY,maxY);
+	var outputArray = [];
+	for(var i = 0;i<inputArray.length;i++) {
+		outputArray[i][0] = mappedX[i];
+		outputArray[i][1] = mappedY[i];
+	}
+	return outputArray;
+};
+
 
 //These are data structure helper functions for the different types of data;
 
