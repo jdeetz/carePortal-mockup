@@ -29,9 +29,16 @@ var findMax = function(inputArray) {
 	return max;
 };
 
-var map = function(inputArray,min,max) {
-
+var mapArray = function(inputArray,min,max) {
+	var inputMin = findMin(inputArray);
+	var inputMax = findMax(inputArray);
+	var mappedValues = [];
+	for(var i = 0;i<inputArray.length;i++) {
+		mappedValues[i] = (inputArray[i] - inputMin) * (max - min) / (inputMax - inputMin) + min;
+	}
+	return mappedValues;
 };
+
 
 //These are data structure helper functions for the different types of data;
 
