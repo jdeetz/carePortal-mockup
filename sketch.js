@@ -9,6 +9,30 @@ function setup() {
 	canvas.parent('content'); //Moves graph from end-of-body to an in-page node for inline display
 }
 
+var findMin = function(inputArray) {
+	var min = inputArray[0];
+	for(var i = 0;i < inputArray.length;i++) {
+		if(inputArray[i] < min) {
+			min = inputArray[i];
+		}
+	}
+	return min;
+};
+
+var findMax = function(inputArray) {
+	var max = inputArray[0];
+	for(var i = 0;i < inputArray.length;i++) {
+		if(inputArray[i] > max) {
+			max = inputArray[i];
+		}
+	}
+	return max;
+};
+
+var map = function(inputArray,min,max) {
+
+};
+
 //These are data structure helper functions for the different types of data;
 
 //This is the helper function for step data, and will give the data as an array or array of arrays in a custom object type that
