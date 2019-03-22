@@ -50,11 +50,22 @@ var map2dArray = function(inputArray,minX,maxX,minY,maxY) {
 	var mappedY = mapArray(yArray,minY,maxY);
 	var outputArray = [];
 	for(var i = 0;i<inputArray.length;i++) {
+		outputArray[i] = [];
 		outputArray[i][0] = mappedX[i];
 		outputArray[i][1] = mappedY[i];
 	}
 	return outputArray;
 };
+
+var gpsCoords = [
+
+];
+for(var i = 0;i < 2000;i++) {
+	gpsCoords[i] = [];
+	gpsCoords[i][0] = random(37.1,37.9);
+	gpsCoords[i][1] = random(70.1,71.9);
+}
+
 
 
 //These are data structure helper functions for the different types of data;
@@ -101,7 +112,18 @@ LifespaceDelta.prototype.render = function(range) {
 
 }
 
+var mappedGps = map2dArray(gpsCoords,0,400,0,400);
+
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-
+	background(255);
+	for(var i = 0;i<mappedGps.length;i++) {
+		for(var j = 0;j<mappedGps[i].length;j++) {
+			fill(0);
+			//ellipse(mappedGps[i][0],mappedGps[i][1],1,1);
+			fill(255,0,0,10);
+			noStroke();
+			ellipse(mappedGps[i][0],mappedGps[i][1],10,10);
+		}
+	}
 }
