@@ -94,23 +94,23 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 //This is the helper function for step data, and will give the data as an array or array of arrays in a custom object type that
 //allows for easier iteration through the data
 var StepData = function(data) {
-
+	this.data = data;
 };
 
 //Same deal for activity data
 var ActivityData = function(data) {
-
+	this.data = data;
 };
 
 //And for lifeSpace(tm) data
 var LifeSpaceData = function(data) {
-
+	this.data = data;
 };
 
 
 
 var Heatmap = function(data) {
-
+	this.data = data;
 }
 
 Heatmap.prototype.render = function(range) {
@@ -118,7 +118,7 @@ Heatmap.prototype.render = function(range) {
 }
 
 var Stepgraph = function(data) {
-
+	this.data = data;
 }
 
 Stepgraph.prototype.render = function(range) {
