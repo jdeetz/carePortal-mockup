@@ -9,69 +9,67 @@ function setup() {
 	canvas.parent('content'); //Moves graph from end-of-body to an in-page node for inline display
 }
 
+//Finds lowest value in a 1-d numerical array
 var findMin = function(inputArray) {
-	var min = inputArray[0];
+	var min = inputArray[0]; //set to value inside the array to prevent default value from being incorrectly flagged as min
 	for(var i = 0;i < inputArray.length;i++) {
 		if(inputArray[i] < min) {
-			min = inputArray[i];
+			min = inputArray[i]; //iterates through array, setting minimum to lowest value found
 		}
 	}
 	return min;
 };
 
+//Finds highest value in a 1-d numerical array
 var findMax = function(inputArray) {
-	var max = inputArray[0];
+	var max = inputArray[0]; //set to value inside the array to prevent default value from being incorrectly flagged as max
 	for(var i = 0;i < inputArray.length;i++) {
 		if(inputArray[i] > max) {
-			max = inputArray[i];
+			max = inputArray[i]; //iterates through array, setting maximum to highest value found
 		}
 	}
 	return max;
 };
 
+//Maps values in a 1-d array, based on internal minimum and maximum, to new range given as arguments
 var mapArray = function(inputArray,min,max) {
-	var inputMin = findMin(inputArray);
-	var inputMax = findMax(inputArray);
-	var mappedValues = [];
+	var inputMin = findMin(inputArray); //Finds lowest value in array
+	var inputMax = findMax(inputArray); //Finds highest value in array
+	var mappedValues = []; //Empty output array
 	for(var i = 0;i<inputArray.length;i++) {
-		mappedValues[i] = (inputArray[i] - inputMin) * (max - min) / (inputMax - inputMin) + min;
+		mappedValues[i] = (inputArray[i] - inputMin) * (max - min) / (inputMax - inputMin) + min; //this is the function that maps the values
 	}
 	return mappedValues;
 };
 
+/*
+Leverages above 1-d array mapping function to map a 2-dimensional array, respecting original array indices
+*/
 var map2dArray = function(inputArray,minX,maxX,minY,maxY) {
-	var xArray = [];
-	var yArray = [];
+	var xArray = []; //Empty array for x positions
+	var yArray = []; //Empty array for y positions
 	for(var i = 0;i<inputArray.length;i++) {
-		xArray[i] = inputArray[i][0];
-		yArray[i] = inputArray[i][1];
+		xArray[i] = inputArray[i][0]; //Splits all 0 indexed elements into one array...
+		yArray[i] = inputArray[i][1]; //And all 1 indexed elements into the other
 	}
-	var mappedX = mapArray(xArray,minX,maxX);
-	var mappedY = mapArray(yArray,minY,maxY);
-	var outputArray = [];
+	var mappedX = mapArray(xArray,minX,maxX); //Calls 1d mapping function on first array...
+	var mappedY = mapArray(yArray,minY,maxY); //And on the second
+	var outputArray = []; //Creates empty output array
 	for(var i = 0;i<inputArray.length;i++) {
-		outputArray[i] = [];
+		outputArray[i] = []; //Creates empty sub-array that will contain the two (X and Y) values
 		outputArray[i][0] = mappedX[i];
 		outputArray[i][1] = mappedY[i];
 	}
 	return outputArray;
 };
 
-var gpsCoords = [
-
-];
-for(var i = 0;i < 2000;i++) {
-	gpsCoords[i] = [];
-	gpsCoords[i][0] = random(37.1,37.9);
-	gpsCoords[i][1] = random(70.1,71.9);
-}
-
+//Calculates distance between two GPS coordinates, with respect to differences in conversion for minutes at different latitudes
 function distance(lat1, lon1, lat2, lon2, unit) {
 	if ((lat1 == lat2) && (lon1 == lon2)) {
-		return 0;
+		return 0; //If distance between coordinates is identical, skips processing to save render time
 	}
 	else {
-		var radlat1 = Math.PI * lat1/180;
+		var radlat1 = Math.PI * lat1/180; //accounting for signed coordinates
 		var radlat2 = Math.PI * lat2/180;
 		var theta = lon1-lon2;
 		var radtheta = Math.PI * theta/180;
@@ -82,8 +80,9 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 		dist = Math.acos(dist);
 		dist = dist * 180/Math.PI;
 		dist = dist * 60 * 1.1515;
-		if (unit=="K") { dist = dist * 1.609344 }
-		if (unit=="N") { dist = dist * 0.8684 }
+		//Above defaults to showing distance in miles, below converts to other units
+		if (unit=="K") { dist = dist * 1.609344 } //Conversion factor for converting distance to kilometers
+		if (unit=="N") { dist = dist * 0.8684 } //And nautical miles
 		return dist;
 	}
 }
@@ -131,6 +130,7 @@ var LifespaceDelta = function(data) {
 }
 
 LifespaceDelta.prototype.render = function(range) {
+	this.data = map2dArray(this.data,0,400,0,400);
 	for(var i = 0;i<this.data.length;i++) {
 		for(var j = 0;j<this.data[i].length;j++) {
 			fill(255,0,0,10);
