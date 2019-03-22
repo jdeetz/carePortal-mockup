@@ -87,7 +87,6 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 		return dist;
 	}
 }
-function fibonacci(num) {  if (num <= 1) return 1;  return fibonacci(num - 1) + fibonacci(num - 2);}
 
 
 
