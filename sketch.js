@@ -109,7 +109,7 @@ var LifeSpaceData = function(data) {
 
 
 
-var Heatmap = function(data) {
+var Heatmap = function(activityData) {
 	this.data = data;
 }
 
@@ -117,7 +117,7 @@ Heatmap.prototype.render = function(range) {
 
 }
 
-var Stepgraph = function(data) {
+var Stepgraph = function(stepData) {
 	this.data = data;
 }
 
@@ -125,7 +125,7 @@ Stepgraph.prototype.render = function(range) {
 
 }
 
-var LifespaceDelta = function(data) {
+var LifespaceDelta = function(lifeSpaceData) {
 	this.data = data;
 }
 
