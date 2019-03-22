@@ -127,25 +127,21 @@ Stepgraph.prototype.render = function(range) {
 }
 
 var LifespaceDelta = function(data) {
-
+	this.data = data;
 }
 
 LifespaceDelta.prototype.render = function(range) {
-
+	for(var i = 0;i<this.data.length;i++) {
+		for(var j = 0;j<this.data[i].length;j++) {
+			fill(255,0,0,10);
+			noStroke();
+			ellipse(this.data[i][0],this.data[i][1],10,10);
+		}
+	}
 }
 
-var mappedGps = map2dArray(gpsCoords,0,400,0,400);
 
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-	background(255);
-	for(var i = 0;i<mappedGps.length;i++) {
-		for(var j = 0;j<mappedGps[i].length;j++) {
-			fill(0);
-			//ellipse(mappedGps[i][0],mappedGps[i][1],1,1);
-			fill(255,0,0,10);
-			noStroke();
-			ellipse(mappedGps[i][0],mappedGps[i][1],10,10);
-		}
-	}
+
 }
