@@ -37,12 +37,27 @@ function storageAvailable(type) {
 }
 
 //This makes easy booleans to check storage availability, as distinct from the above method which passes the exceptions
-var localStorageAvailable = if(storageAvailable('localStorage')) {return true;} else {return false;};
-var sessionStorageAvailable = if(storageAvailable('sessionStorage')) {return true;} else {return false;};
+var localStorageAvailable;
+if(storageAvailable('localStorage')) {localStorageAvailable = true;} else {localStorageAvailable = false;};
+var sessionStorageAvailable;
+if(storageAvailable('sessionStorage')) {sessionStorageAvailable = true;} else {sessionStorageAvailable = false;};
 
 //This initializes the storage for settings and display selections for data on other pages
-var createStorage = function() {
-
+var prefStorage;
+var createStorage = function(type) {
+	if(type == 'local') {
+		prefStorage = window.localStorage;
+	} else {
+		prefStorage = window.sessionStorage;
+	}
+	prefStorage.setItem("populated","yep");
+	prefStorage.setItem("goalBed","2100");
+	prefStorage.setItem("goalWake","700");
+	prefStorage.setItem("goalActive","2.0");
+	prefStorage.setItem("goalStep","3000");
+	prefStorage.setItem("targetOutings","3");
+	console.log("Storage initialized! Type; " + type);
+	console.log(prefStorage);
 };
 
 //This populates the settings, and preferences for display selections, based on which page is active
@@ -50,11 +65,28 @@ var populatePrefs = function() {
 
 };
 
+//This resets the preferences on all pages to the default, and resets all the settings
+var defaultPrefs = function() {
+	prefStorage.clear();
+	tryStorage();
+};
+
 //This runs automatically to either initialize or populate the page preferences/settings
-if(localStorageAvailable) {
-	if(!localStorage.getItem('populated')) {
-		createStorage();
+var tryStorage = function() {
+	if(localStorageAvailable) {
+		if(!localStorage.getItem('populated')) {
+			createStorage('local');
+		} else {
+			populatePrefs();
+		}
+	} else if(sessionStorageAvailable) {
+		if(!sessionStorage.getItem('populated')) {
+			createStorage('session');
+		} else {
+			populatePrefs();
+		}
 	} else {
-		populatePrefs();
+		console.log("Apparently no storage is available");
 	}
-}
+};
+tryStorage();
