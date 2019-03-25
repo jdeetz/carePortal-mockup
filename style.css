@@ -33,7 +33,32 @@ h1 {
 
 /* This is the div that holds the graph and insight data */
 #content {
+	border: 1px solid rgb(150,150,150);
+	border-radius:0px 0px 10px 10px;
+	overflow:auto;
+}
 
+.navTab {
+	margin:auto;
+	width:32%;
+	display:inline-block;
+	text-align:center;
+	font-size:1.1em;
+	font-weight:bold;
+	background-color:rgb(100,100,100);
+	border-radius:10px 10px 0px 0px;
+}
+
+.active {
+	background-color:rgb(150,150,150);
+	border-radius:10px 10px 0px 0px;
+	color:white;
+}
+
+#navigation {
+	width:100%;
+	margin-top:20px;
+	text-align:center;
 }
 
 /* This is the default ID for the automatically generated canvas by p5 - the CSS below floats it to the right of the text content */

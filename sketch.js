@@ -143,5 +143,5 @@ LifespaceDelta.prototype.render = function(range) {
 
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-
+	
 }
