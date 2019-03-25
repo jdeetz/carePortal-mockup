@@ -31,6 +31,10 @@ h1 {
 	overflow:auto;
 }
 
+a {
+	text-decoration:none;
+}
+
 /* This is the div that holds the graph and insight data */
 #content {
 	border: 1px solid rgb(150,150,150);
