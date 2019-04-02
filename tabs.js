@@ -56,8 +56,6 @@ var createStorage = function(type) {
 	prefStorage.setItem("goalActive","2.0");
 	prefStorage.setItem("goalStep","3000");
 	prefStorage.setItem("targetOutings","3");
-	console.log("Storage initialized! Type; " + type);
-	console.log(prefStorage);
 };
 
 //This populates the settings, and preferences for display selections, based on which page is active
@@ -77,12 +75,14 @@ var tryStorage = function() {
 		if(!localStorage.getItem('populated')) {
 			createStorage('local');
 		} else {
+			prefStorage = window.localStorage;
 			populatePrefs();
 		}
 	} else if(sessionStorageAvailable) {
 		if(!sessionStorage.getItem('populated')) {
 			createStorage('session');
 		} else {
+			prefStorage = window.sessionStorage;
 			populatePrefs();
 		}
 	} else {
