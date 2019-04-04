@@ -8,9 +8,12 @@ if ($conn->connect_error) {
     echo("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM DEMO_STEP";
+$startDate = $_GET['startDate'];
+$endDate = $_GET['endDate'];
+
+$sql = "SELECT * FROM DEMO_STEP where times between $startDate and $endDate order by id";
 $result = $conn->query($sql);
-// where times between $startDate and $endDate order by id
+//
 $first = true;
 if ($result->num_rows > 0) {
 	echo "[";

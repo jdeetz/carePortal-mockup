@@ -18,6 +18,6 @@ function ajax_get(url, callback) {
     xmlhttp.send();
 }
 var stepdata;
-ajax_get('dataFetch.php', function(data) {
+ajax_get('dataFetch.php?startDate=2019-04-03&endDate=2019-04-05', function(data) {
     stepdata = data;
 });
