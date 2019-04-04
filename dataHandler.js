@@ -18,6 +18,6 @@ function ajax_get(url, callback) {
     xmlhttp.send();
 }
 var fred;
-ajax_get('test.php', function(data) {
+ajax_get('dataFetch.php', function(data) {
     fred = data;
 });
