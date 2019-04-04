@@ -17,7 +17,7 @@ function ajax_get(url, callback) {
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
 }
-var fred;
+var stepdata;
 ajax_get('dataFetch.php', function(data) {
-    fred = data;
+    stepdata = data;
 });
