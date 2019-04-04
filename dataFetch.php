@@ -29,6 +29,8 @@ if ($result->num_rows > 0) {
 	echo "]";
 } else {
     echo "0 results";
+    echo $startDate;
+    echo $endDate;
 }
 $conn->close();
 ?>
