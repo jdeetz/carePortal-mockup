@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 $startDate = $_GET['startDate'];
 $endDate = $_GET['endDate'];
 
-$sql = "SELECT * FROM DEMO_STEP where times >= '$startDate' and times < '$endDate' order by id";
+$sql = "SELECT * FROM DEMO_GPS where times >= '$startDate' and times < '$endDate' order by id";
 $result = $conn->query($sql);
 //
 $first = true;
@@ -29,8 +29,6 @@ if ($result->num_rows > 0) {
 	echo "]";
 } else {
     echo "0 results";
-    echo $startDate;
-    echo $endDate;
 }
 $conn->close();
 ?>
