@@ -94,7 +94,14 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 //This is the helper function for step data, and will give the data as an array or array of arrays in a custom object type that
 //allows for easier iteration through the data
 var StepData = function(data) {
-	this.data = data;
+	this.data = [];
+	for(var row = 0;row<data.length;row++) {
+		this.data[i] = data[i].steps;
+	}
+};
+
+StepData.prototype.getRow = function(rowNumber) {
+	return this.data[rowNumber];
 };
 
 //Same deal for activity data
@@ -143,5 +150,5 @@ LifespaceDelta.prototype.render = function(range) {
 
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-	
+
 }
