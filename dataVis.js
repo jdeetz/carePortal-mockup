@@ -95,7 +95,7 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 //allows for easier iteration through the data
 var StepData = function(data) {
 	this.data = [];
-	for(var row = 0;row<data.length;row++) {
+	for(var i = 0;i<data.length;i++) {
 		this.data[i] = data[i].steps;
 	}
 };
