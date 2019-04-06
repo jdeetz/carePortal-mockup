@@ -101,7 +101,7 @@ var StepData = function(data) {
 };
 
 StepData.prototype.getRow = function(rowNumber) {
-	return this.data[rowNumber];
+	return this.data[rowNumber + 1];
 };
 
 //Same deal for activity data
