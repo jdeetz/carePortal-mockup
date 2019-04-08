@@ -60,7 +60,7 @@ var createStorage = function(type) {
 
 //This populates the settings, and preferences for display selections, based on which page is active
 var populatePrefs = function() {
-	if(currentTab == 3) {
+	if(window.currentTab === 3) {
 		document.getElementById("goalBed").value = prefStorage.getItem("goalBed");
 		document.getElementById("goalWake").value = prefStorage.getItem("goalWake");
 		document.getElementById("goalActive").value = prefStorage.getItem("goalActive");
