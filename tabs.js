@@ -51,8 +51,8 @@ var createStorage = function(type) {
 		prefStorage = window.sessionStorage;
 	}
 	prefStorage.setItem("populated","yep");
-	prefStorage.setItem("goalBed","2100");
-	prefStorage.setItem("goalWake","700");
+	prefStorage.setItem("goalBed","21:00");
+	prefStorage.setItem("goalWake","7:00");
 	prefStorage.setItem("goalActive","2.0");
 	prefStorage.setItem("goalStep","3000");
 	prefStorage.setItem("targetOutings","3");
