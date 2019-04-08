@@ -21,11 +21,13 @@
 				</div>
 			</div>
 			<div id="content">
+				<div id="saveSuccess">Saved successfully!</div>
 				<label for="goalWake">Goal wake time </label> <input type="time" name="goalWake" id="goalWake" min="03:00" max="11:00" value="07:00" step="1800" required /><br /><br />
 				<label for="goalBed">Goal bed time </label> <input type="time" name="goalBed" id="goalBed" min="15:00" max="23:00" value="21:00" step="1800" required /><br /><br />
 				<label for="goalActive">Goal active hours / day</label> <input type="number" name="goalActive" id="goalActive" min="0.5" max="12.0" value="2.0" step="0.5" required /><br /><br />
 				<label for="goalStep">Goal steps / day </label> <input type="number" name="goalStep" id="goalStep" min="500" max="20000" value="3000" step="100" required /><br /><br />
 				<label for="targetOutings">Target outings / month </label> <input type="number" name="targetOutings" id="targetOutings" min="0" max="30" value="3" step="1" required /><br /><br />
+				<input type="button" value="Reset" onclick="defaultPrefs()" />
 			</div>
 		</div>
 
@@ -34,8 +36,10 @@
 		<link rel="stylesheet" type="text/css" href="style.css"></link> <!-- Relative link to external stylesheet -->
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> <!-- adding a font from Google's font library -->
 		<script type="text/javascript" src="tabs.js" async></script> <!-- Relative link to tab management script -->
+		<script type="text/javascript" src="dataHandler.js" async></script> <!-- Relative link to data handler script -->
 		<script>
 			currentTab = 3;
 		</script>
+		<script type="text/javascript" src="dataVis.js" async></script> <!-- Relative link to graph drawing script, which leverages p5.js -->
 	</body>
 </html>

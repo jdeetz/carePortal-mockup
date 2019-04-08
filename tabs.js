@@ -52,7 +52,7 @@ var createStorage = function(type) {
 	}
 	prefStorage.setItem("populated","yep");
 	prefStorage.setItem("goalBed","21:00");
-	prefStorage.setItem("goalWake","7:00");
+	prefStorage.setItem("goalWake","07:00");
 	prefStorage.setItem("goalActive","2.0");
 	prefStorage.setItem("goalStep","3000");
 	prefStorage.setItem("targetOutings","3");
@@ -60,13 +60,20 @@ var createStorage = function(type) {
 
 //This populates the settings, and preferences for display selections, based on which page is active
 var populatePrefs = function() {
-
+	if(currentTab == 3) {
+		document.getElementById("goalBed").value = prefStorage.getItem("goalBed");
+		document.getElementById("goalWake").value = prefStorage.getItem("goalWake");
+		document.getElementById("goalActive").value = prefStorage.getItem("goalActive");
+		document.getElementById("goalStep").value = prefStorage.getItem("goalStep");
+		document.getElementById("targetOutings").value = prefStorage.getItem("targetOutings");
+	}
 };
 
 //This resets the preferences on all pages to the default, and resets all the settings
 var defaultPrefs = function() {
 	prefStorage.clear();
 	tryStorage();
+	populatePrefs();
 };
 
 //This runs automatically to either initialize or populate the page preferences/settings

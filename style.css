@@ -48,6 +48,13 @@ a {
 	padding:25px;
 }
 
+#saveSuccess {
+	display:none;
+	color:green;
+	font-weight:bold;
+	padding-bottom:20px;
+}
+
 
 .navTab {
 	margin:auto;
