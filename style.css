@@ -1,10 +1,10 @@
 body {
-	/* background-color: rgb(210,230,255);
+	background-color: rgb(210,230,255);
 	color:rgb(20,20,20); /* Primary font color is a very dark gray */
 	/* Chosen background and font colors, commented out during development */
 
-	background-color:rgb(20,20,20);
-	color:silver;
+	/* background-color:rgb(20,20,20);
+	color:silver; */
 	/* Development background and font colors - easy on the eyes, lets me know if I'm looking at the wrong version */
 	font-family: 'Source Sans Pro', sans-serif; /* Google Font added from CDN, with sans-serif fallback */
 	font-display:auto;
@@ -16,8 +16,8 @@ h1 {
 	text-shadow: -1px 1px silver; /* Header shadowing */
 }
 #main {
-	/*background-color:rgb(250,250,250); Commented out during development*/
-	background-color:rgb(30,30,30); /* Easy on the eyes for development, remove for deployment */
+	background-color:rgb(250,250,250); Commented out during development*/
+	/*background-color:rgb(30,30,30); /* Easy on the eyes for development, remove for deployment */
 	padding:20px;
 	border:50px;
 	border-radius:20px;
@@ -29,11 +29,13 @@ h1 {
 	-moz-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.75);
 	overflow:auto;
+	padding-top:20px;
 }
 
 a {
 	text-decoration:none;
-	color:silver;
+	/*color:silver;*/
+	color:rgb(210,230,255);
 }
 
 .active a {
@@ -63,14 +65,17 @@ a {
 	text-align:center;
 	font-size:1.1em;
 	font-weight:bold;
-	background-color:rgb(100,100,100);
+	/*background-color:rgb(100,100,100);*/
+	background-color:rgb(70,100,200);
 	border-radius:10px 10px 0px 0px;
 }
 
 .active {
-	background-color:rgb(150,150,150);
+	/*background-color:rgb(150,150,150);*/
+	background-color: rgb(210,230,255);
 	border-radius:10px 10px 0px 0px;
-	color:white;
+	/*color:white;*/
+	color:rgb(70,100,200);
 }
 
 #navigation {
@@ -82,4 +87,8 @@ a {
 /* This is the default ID for the automatically generated canvas by p5 - the CSS below floats it to the right of the text content */
 #defaultCanvas0 {
 	float:right;
+}
+
+button {
+
 }
