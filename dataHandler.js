@@ -58,9 +58,3 @@ var grabData = function(type, numDays) {
 		}
 	});
 };
-
-//This is a WORKING use of the above function, which will grab data within a certain date range and store it in a local variable
-/*
-ajax_get('stepDataFetch.php?startDate=2019-04-03&endDate=2019-04-05', function(data) {
-    stepdata = data;
-});*/
