@@ -24,7 +24,7 @@ var stepdata;
 var grabStepData = function(numDays) {
 	var today = new Date();
 	var startDay = today;
-	startDay.setDate(startDay.getDate()-numDays);
+	startDay.setDate(startDay.getDay()-numDays);
 
 	//makes variables of each of the components of the start date
 	var syear = startDay.getFullYear();
@@ -33,6 +33,9 @@ var grabStepData = function(numDays) {
 		smon = "0" + smon;
 	}
 	var sday = startDay.getDate();
+	if(sday < 10) {
+		sday = "0" + sday;
+	}
 
 	//makes variables for each of the components of the end date (today)
 	var eyear = today.getFullYear();
@@ -41,7 +44,9 @@ var grabStepData = function(numDays) {
 		emon = "0" + emon;
 	}
 	var eday = today.getDate();
-	console.log('stepDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday);
+	if(eday < 10) {
+		eday = "0" + eday;
+	}
 	ajax_get('stepDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday, function(data) {
 		stepdata = new StepData(data);
 	});
@@ -49,8 +54,8 @@ var grabStepData = function(numDays) {
 
 var grabGPSData = function(numDays) {
 	var today = new Date();
-	var startDay = new Date();
-	startDay.setDate(startDay.getDate()-numDays);
+	var startDay = today;
+	startDay.setDate(startDay.getDay()-numDays);
 
 	//makes variables of each of the components of the start date
 	var syear = startDay.getFullYear();
@@ -59,6 +64,9 @@ var grabGPSData = function(numDays) {
 		smon = "0" + smon;
 	}
 	var sday = startDay.getDate();
+	if(sday < 10) {
+		sday = "0" + sday;
+	}
 
 	//makes variables for each of the components of the end date (today)
 	var eyear = today.getFullYear();
@@ -67,6 +75,9 @@ var grabGPSData = function(numDays) {
 		emon = "0" + emon;
 	}
 	var eday = today.getDate();
+	if(eday < 10) {
+		eday = "0" + eday;
+	}
 	ajax_get('gpsDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday, function(data) {
 		gpsdata = data;
 	});
