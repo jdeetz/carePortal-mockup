@@ -38,6 +38,11 @@
 		<script type="text/javascript" src="prefStorage.js" async></script> <!-- handles local storage of settings -->
 		<script>
 			window.currentTab = 1;
+			if('serviceWorker' in navigator) {
+			  navigator.serviceWorker
+			           .register('/prefStorage.js')
+			           .then(function() { console.log("Service Worker Registered"); });
+			}
 		</script>
 		<script type="text/javascript" src="dataVis.js" async></script> <!-- Relative link to graph drawing script, which leverages p5.js -->
 		<script type="text/javascript" src="dataHandler.js" async></script> <!-- Relative link to data handler script -->
