@@ -4,8 +4,12 @@ self.addEventListener('install', function(event) {
     caches.open('cpCache').then(function(cache) {
       return cache.addAll(
         [
+	   	'/manifest.json',
           '/style.css',
-          '/manifest.json',
+		'/dataHandler.js',
+		'/dataVis.js',
+		'/settings.html',
+		'/insights.html',
           '/index.html'
         ]
       );
