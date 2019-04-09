@@ -1,7 +1,7 @@
 //This is PWA code to cache the manifest
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open(cacheName).then(function(cache) {
+    caches.open('cpCache').then(function(cache) {
       return cache.addAll(
         [
           '/style.css',
