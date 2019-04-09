@@ -23,7 +23,7 @@ var stepdata;
 //and store them in the custom data types defined in the dataVis.js file
 var grabStepData = function(numDays) {
 	var today = new Date();
-	var startDay = new Date();
+	var startDay = today;
 	startDay.setDate(startDay.getDate()-numDays);
 
 	//makes variables of each of the components of the start date
