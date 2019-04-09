@@ -1,3 +1,17 @@
+//This is PWA code to cache the manifest
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(cacheName).then(function(cache) {
+      return cache.addAll(
+        [
+          '/rr/style.css',
+          '/rr/manifest.json',
+          '/index.html'
+        ]
+      );
+    })
+  );
+});
 
 
 //This tests the availability of storage so we know whether we can use it to store settings etc. persistently
