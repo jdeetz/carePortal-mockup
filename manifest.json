@@ -1,0 +1,16 @@
+{
+  "short_name": "CareEcosystem",
+  "name": "Care Ecosystem Caretaker Portal",
+  "icons": [
+    {
+      "src": "ceIcon512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#D2E6FF",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#D2E6FF"
+}
