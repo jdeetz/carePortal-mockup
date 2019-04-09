@@ -21,7 +21,7 @@ var stepdata;
 
 //These are the database querying functions, they leverage the above and user defined variables to grab specific ranges of data
 //and store them in the custom data types defined in the dataVis.js file
-var grabStepData = function(numDays) {
+var grabData = function(type, numDays) {
 	var today = new Date();
 
 	//makes variables for each of the components of the end date (today)
@@ -50,39 +50,12 @@ var grabStepData = function(numDays) {
 		sday = "0" + sday;
 	}
 
-	ajax_get('stepDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday, function(data) {
-		stepdata = new StepData(data);
-	});
-};
-
-var grabGPSData = function(numDays) {
-	var today = new Date();
-	var startDay = today;
-	startDay.setDate(startDay.getDay()-numDays);
-
-	//makes variables of each of the components of the start date
-	var syear = startDay.getFullYear();
-	var smon = startDay.getMonth() + 1;
-	if(smon < 10) {
-		smon = "0" + smon;
-	}
-	var sday = startDay.getDate();
-	if(sday < 10) {
-		sday = "0" + sday;
-	}
-
-	//makes variables for each of the components of the end date (today)
-	var eyear = today.getFullYear();
-	var emon = today.getMonth() + 1;
-	if(emon < 10) {
-		emon = "0" + emon;
-	}
-	var eday = today.getDate();
-	if(eday < 10) {
-		eday = "0" + eday;
-	}
-	ajax_get('gpsDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday, function(data) {
-		gpsdata = data;
+	ajax_get(type + 'DataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday, function(data) {
+		if(type == "step") {
+			stepdata = new StepData(data);
+		} else if(type == "gps") {
+			gpsdata = data;
+		}
 	});
 };
 
