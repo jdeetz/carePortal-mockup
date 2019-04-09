@@ -49,11 +49,10 @@ var grabStepData = function(numDays) {
 	if(sday < 10) {
 		sday = "0" + sday;
 	}
-	console.log('stepDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday);
-	/*
+
 	ajax_get('stepDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday, function(data) {
 		stepdata = new StepData(data);
-	});*/
+	});
 };
 
 var grabGPSData = function(numDays) {
