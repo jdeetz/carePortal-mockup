@@ -23,13 +23,52 @@ var stepdata;
 //and store them in the custom data types defined in the dataVis.js file
 var grabStepData = function(numDays) {
 	var today = new Date();
-	var startDay = new Date().setDate(new Date.getDate()-numDays);
+	var startDay = new Date();
+	startDay.setDate(startDay.getDate()-numDays);
+
+	//makes variables of each of the components of the start date
+	var syear = startDay.getFullYear();
+	var smon = startDay.getMonth() + 1;
+	if(smon < 10) {
+		smon = "0" + smon;
+	}
+	var sday = startDay.getDate();
+
+	//makes variables for each of the components of the end date (today)
+	var eyear = today.getFullYear();
+	var emon = today.getMonth() + 1;
+	if(emon < 10) {
+		emon = "0" + emon;
+	}
+	var eday = today.getDate();
+	ajax_get('stepDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday, function(data) {
+		stepdata = new StepData(data);
+	});
 };
 
 var grabGPSData = function(numDays) {
 	var today = new Date();
 	var startDay = new Date();
 	startDay.setDate(startDay.getDate()-numDays);
+
+	//makes variables of each of the components of the start date
+	var syear = startDay.getFullYear();
+	var smon = startDay.getMonth() + 1;
+	if(smon < 10) {
+		smon = "0" + smon;
+	}
+	var sday = startDay.getDate();
+
+	//makes variables for each of the components of the end date (today)
+	var eyear = today.getFullYear();
+	var emon = today.getMonth() + 1;
+	if(emon < 10) {
+		emon = "0" + emon;
+	}
+	var eday = today.getDate();
+	ajax_get('gpsDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday, function(data) {
+		gpsdata = data;
+	});
 };
 
 //This is a WORKING use of the above function, which will grab data within a certain date range and store it in a local variable
