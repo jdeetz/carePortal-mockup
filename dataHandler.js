@@ -23,8 +23,12 @@ var stepdata;
 //and store them in the custom data types defined in the dataVis.js file
 var grabStepData = function(numDays) {
 	var today = new Date();
+	console.log("today " + today);
 	var startDay = today;
+	console.log("start day " + startDay);
 	startDay.setDate(startDay.getDay()-numDays);
+	console.log("start day post adjustment " + startDay);
+	console.log("today post adjustment " + today);
 
 	//makes variables of each of the components of the start date
 	var syear = startDay.getFullYear();
@@ -36,6 +40,7 @@ var grabStepData = function(numDays) {
 	if(sday < 10) {
 		sday = "0" + sday;
 	}
+	console.log("start stuff; " + sday + " " + smon + " " + syear);
 
 	//makes variables for each of the components of the end date (today)
 	var eyear = today.getFullYear();
@@ -47,9 +52,12 @@ var grabStepData = function(numDays) {
 	if(eday < 10) {
 		eday = "0" + eday;
 	}
+	console.log("end stuff; " + eday + " " + emon + " " + eyear);
+	console.log('stepDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday);
+	/*
 	ajax_get('stepDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday, function(data) {
 		stepdata = new StepData(data);
-	});
+	});*/
 };
 
 var grabGPSData = function(numDays) {
