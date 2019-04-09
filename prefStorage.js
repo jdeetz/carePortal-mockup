@@ -4,8 +4,8 @@ self.addEventListener('install', function(event) {
     caches.open(cacheName).then(function(cache) {
       return cache.addAll(
         [
-          '/rr/style.css',
-          '/rr/manifest.json',
+          '/style.css',
+          '/manifest.json',
           '/index.html'
         ]
       );
