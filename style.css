@@ -57,6 +57,13 @@ a {
 	padding-bottom:20px;
 }
 
+#valuesReset {
+	display:none;
+	color:orange;
+	font-weight:bold;
+	padding-bottom:20px;
+}
+
 
 .navTab {
 	margin:auto;

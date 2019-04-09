@@ -64,6 +64,7 @@ var defaultPrefs = function() {
 	prefStorage.clear();
 	tryStorage();
 	populatePrefs();
+	document.getElementById("valuesReset").style = "display:block";
 };
 
 var savePrefs = function() {
