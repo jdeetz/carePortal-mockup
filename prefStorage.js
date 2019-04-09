@@ -13,6 +13,15 @@ self.addEventListener('install', function(event) {
   );
 });
 
+self.addEventListener('fetch', function(event) {
+	console.log(event.request.url);
+	event.respondWith(
+		caches.match(event.request).then(function(response) {
+			return response || fetch(event.request);
+		})
+	);
+});
+
 
 //This tests the availability of storage so we know whether we can use it to store settings etc. persistently
 function storageAvailable(type) {
