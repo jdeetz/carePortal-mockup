@@ -41,6 +41,7 @@ var grabStepData = function(numDays) {
 		emon = "0" + emon;
 	}
 	var eday = today.getDate();
+	console.log('stepDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday);
 	ajax_get('stepDataFetch.php?startDate=' + syear + "-" + smon + "-" + sday + "&endDate=" + eyear + "-" + emon + "-" + eday, function(data) {
 		stepdata = new StepData(data);
 	});
