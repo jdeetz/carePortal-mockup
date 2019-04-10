@@ -91,7 +91,8 @@ var defaultPrefs = function() {
 	prefStorage.clear();
 	tryStorage();
 	populatePrefs();
-	document.getElementById("valuesReset").style = "display:block";
+	document.getElementById("valuesReset").style = "display:block;animation-play-state:running;";
+	setTimeout(function() {document.getElementById("valuesReset").style = "display:none;animation-play-state:initial;"},3000);
 };
 
 var savePrefs = function() {
@@ -100,7 +101,8 @@ var savePrefs = function() {
 	prefStorage.setItem("goalActive",document.getElementById("goalActive").value);
 	prefStorage.setItem("goalStep",document.getElementById("goalStep").value);
 	prefStorage.setItem("targetOutings",document.getElementById("targetOutings").value);
-	document.getElementById("saveSuccess").style = "display:block";
+	document.getElementById("saveSuccess").style = "display:block;animation-play-state:running;";
+	setTimeout(function() {document.getElementById("saveSuccess").style = "display:none;animation-play-state:initial;"},3000);
 };
 
 //This runs automatically to either initialize or populate the page preferences/settings

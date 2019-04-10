@@ -29,6 +29,7 @@
 			<main> <!-- landmark for screen readers -->
 				<div id="content">
 					<div id="settingsPanel">
+						<h2>Your settings:</h2>
 						<div id="saveSuccess">Saved successfully!</div>
 						<div id="valuesReset">Settings returned to default</div>
 						<label for="goalWake">Goal wake time </label> <input type="time" name="goalWake" id="goalWake" min="03:00" max="11:00" value="07:00" step="1800" required /><br /><br />
@@ -36,7 +37,23 @@
 						<label for="goalActive">Goal active hours / day</label> <input type="number" name="goalActive" id="goalActive" min="0.5" max="12.0" value="2.0" step="0.5" required /><br /><br />
 						<label for="goalStep">Goal steps / day </label> <input type="number" name="goalStep" id="goalStep" min="500" max="20000" value="3000" step="100" required /><br /><br />
 						<label for="targetOutings">Target outings / month </label> <input type="number" name="targetOutings" id="targetOutings" min="0" max="30" value="3" step="1" required /><br /><br />
-						<button onclick="defaultPrefs()">Reset to Default</button> <button onclick="savePrefs()">Save</button>
+						<button onclick="defaultPrefs()">Reset to Default</button> <button onclick="populatePrefs()">Cancel</button> <button onclick="savePrefs()">Save</button>
+					</div>
+					<div id="averages">
+						<h2>Current averages:</h2>
+						<p id="avgWakeTime"></p>
+						<p id="avgBedTime"></p>
+						<p id="avgActiveHrs"></p>
+						<p id="avgSteps"></p>
+						<p id="avgOutings"></p>
+					</div>
+					<div id="recommended">
+						<h2>Recommended values:</h2>
+						<p id="recWakeTime"></p>
+						<p id="recBedTime"></p>
+						<p id="recActiveHrs"></p>
+						<p id="recSteps"></p>
+						<p id="recOutings"></p>
 					</div>
 				</div>
 			</main>
