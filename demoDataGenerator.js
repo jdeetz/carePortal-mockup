@@ -17,14 +17,18 @@ function ajax_post(url, postData, callback) {
     xmlhttp.open("POST", url, true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(postData);
-    console.log(postData);
 }
 
 function hopeThisWorks() {
-	var fred = new Date(2012,12,12).toISOString().slice(0, 19).replace('T', ' ');
+	var fred = new Date().toISOString().slice(0, 19).replace('T', ' ');
 	ajax_post("demoDataSubmitter.php","input=4444&" + fred,function(response) {
 		document.write(response);
 	});
+};
+
+function testDate() {
+	var fred = new Date().toISOString().slice(0, 19).replace('T', ' ');
+	console.log(fred);
 };
 
 
