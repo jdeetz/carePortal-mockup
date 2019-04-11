@@ -21,7 +21,8 @@ function ajax_post(url, postData, callback) {
 }
 
 function hopeThisWorks() {
-	ajax_post("demoDataSubmitter.php","input=54321",function(response) {
+	var fred = new Date(2012,12,12).toISOString().slice(0, 19).replace('T', ' ');
+	ajax_post("demoDataSubmitter.php","input=4444&" + ,function(response) {
 		document.write(response);
 	});
 };
