@@ -82,6 +82,7 @@ function createAndSubData() {
 	generateRandData(500,$sevenLat,$sevenLon);
 	generateRandData(500,$krogLat,$krogLon);
 	generateRandData(500,$kelleyLat,$kelleyLon);
+	echo "<br />it got all the way to where it was supposed to generateLast...";
 	generateLast();
 }
 
