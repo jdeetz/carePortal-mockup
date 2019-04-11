@@ -8,7 +8,7 @@ if ($conn->connect_error) {
     echo("Connection failed: " . $conn->connect_error);
 }
 
-for($i = 0; $i < 50000;$i++) {
+for($i = 0; $i < 500000;$i++) {
 	$inputData = random_int(0,6000);
 	$randYear = random_int(2018,2019);
 	$randDay = random_int(10,30);
