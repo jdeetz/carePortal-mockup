@@ -9,9 +9,10 @@ if ($conn->connect_error) {
 }
 
 $inputData = $_POST['input'];
-$timeData = $_POST['timee'];
+$timeData1 = $_POST['time1'];
+$timeData2 = $_POST['time2'];
 
-$sql = "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, $timeData, $inputData)";
+$sql = "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, $timeData1 . " " . $timeData2, $inputData)";
 $result = $conn->query($sql);
 //
 echo $result;
