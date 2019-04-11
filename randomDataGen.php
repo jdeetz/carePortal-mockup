@@ -1,5 +1,6 @@
 <?php
 require "creden.php";
+echo "got this far";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
