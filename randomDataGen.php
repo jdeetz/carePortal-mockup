@@ -9,10 +9,15 @@ if ($conn->connect_error) {
 }
 
 $inputData = random_int(0,6000);
-$randmon = "0" . rand(3,4);
-$timeData = random_int(2018,2019) . "-" . $randmon . "-" . random_int(10,30) . " " . random_int(10,23) . ":" . random_int(10,59) . ":" . random_int(10,59);
+$randYear = random_int(2018,2019);
+$randDay = random_int(10,30);
+$randMon = "0" . random_int(3,4);
+$randHour = random_int(10,23);
+$randMin = random_int(10,59);
+$randSec = random_int(10,59);
+$timeData = $randYear . "-" . $randMon . "-" . $randDay . " " . $randHour . ":" . $randMin . ":" . $randSec;
 
-$sql = "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, current_timestamp(), $inputData)";
+$sql = "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, $timeData, $inputData)";
 $result = $conn->query($sql);
 //
 echo $result;
