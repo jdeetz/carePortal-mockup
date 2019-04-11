@@ -1,6 +1,6 @@
 <?php
 require "creden.php";
-echo "got this far";
+echo "got this far<br />";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -26,6 +26,8 @@ function randFloat($min,$max) {
 	return mt_rand($min,$max)/1000000;
 }
 
+echo "randFloat function created<br />";
+
 function generateRandTimestamp() {
 	$randYear = random_int(2018,2019);
 	$randDay = random_int(10,30);
@@ -36,6 +38,8 @@ function generateRandTimestamp() {
 	$timeData = $randYear . "-" . $randMon . "-" . $randDay . " " . $randHour . ":" . $randMin . ":" . $randSec;
 	return $timeData;
 }
+
+echo "randTimestamp also...<br />";
 
 function generateRandData($numTimes,$forLat,$forLon) {
 	for($i = 0; $i < $numTimes;$i++) {
@@ -52,6 +56,8 @@ function generateRandData($numTimes,$forLat,$forLon) {
 	}
 }
 
+echo "and generateRandData...<br />";
+
 function generateLast() {
 	$inputData = random_int(0,6000);
 	$randYear = random_int(2018,2019);
@@ -66,7 +72,10 @@ function generateLast() {
 	$result = $conn->multi_query($sql);
 }
 
+echo "and generateLast.....<br />";
+
 function createAndSubData() {
+	echo "it even ran the createAndSubData function";
 	global $homeLat, $homeLon, $workLat, $workLon, $sevenLat, $sevenLon, $krogLat, $krogLon, $kelleyLat, $kelleyLon;
 	generateRandData(500,$homeLat,$homeLon);
 	generateRandData(500,$workLat,$workLon);
@@ -75,6 +84,8 @@ function createAndSubData() {
 	generateRandData(500,$kelleyLat,$kelleyLon);
 	generateLast();
 }
+
+echo "even the createAndSubData function...<br />"
 
 createAndSubData();
 
