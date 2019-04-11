@@ -24,7 +24,7 @@ function hopeThisWorks() {
 	var fred2 = new Date().toISOString().slice(11, 19);
 	var sendData = "input=888888&time1=" + fred1 + "&time2=" + fred2;
 	console.log(sendData);
-	ajax_post("demoDataSubmitter.php",,function(response) {
+	ajax_post("demoDataSubmitter.php",sendData,function(response) {
 		document.write(response);
 	});
 };
