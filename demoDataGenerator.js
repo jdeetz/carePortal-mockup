@@ -20,7 +20,7 @@ function ajax_post(url, postData, callback) {
 }
 
 function hopeThisWorks() {
-	var fred1 = new Date().toISOString().slice(0, 9);
+	var fred1 = new Date().toISOString().slice(0, 10);
 	var fred2 = new Date().toISOString().slice(11, 19);
 	var sendData = "input=888888&time1=" + fred1 + "&time2=" + fred2;
 	console.log(sendData);
