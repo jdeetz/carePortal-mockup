@@ -10,7 +10,7 @@ if ($conn->connect_error) {
 
 $inputData = $_GET['input'];
 
-$sql = "INSERT INTO `DEMO_STEP` (`id`, `times`, `steps`) VALUES (NULL, current_timestamp(), `12345`)";
+$sql = "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, current_timestamp(), `12345`)";
 $result = $conn->query($sql);
 //
 echo $result;
