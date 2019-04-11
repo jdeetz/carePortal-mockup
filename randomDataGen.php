@@ -85,7 +85,7 @@ function createAndSubData() {
 	generateLast();
 }
 
-echo "even the createAndSubData function...<br />"
+echo "even the createAndSubData function...<br />";
 
 createAndSubData();
 
