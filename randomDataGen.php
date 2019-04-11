@@ -19,6 +19,7 @@ $krogLat = 37.442378;
 $krogLon = -79.204132;
 $kelleyLat = 37.428052;
 $kelleyLon = -79.172024;
+$sql = ;
 
 function randFloat($min,$max) {
 	$min = $min * 1000000;
@@ -42,6 +43,7 @@ function generateRandTimestamp() {
 echo "randTimestamp also...<br />";
 
 function generateRandData($numTimes,$forLat,$forLon) {
+	global $sql;
 	for($i = 0; $i < $numTimes;$i++) {
 		$minLat = $forLat - ($forLat / 1000);
 		$maxLat = $forLat + ($forLat / 1000);
@@ -59,6 +61,7 @@ function generateRandData($numTimes,$forLat,$forLon) {
 echo "and generateRandData...<br />";
 
 function generateLast() {
+	global $sql, $conn;
 	$inputData = random_int(0,6000);
 	$randYear = random_int(2018,2019);
 	$randDay = random_int(10,30);
