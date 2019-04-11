@@ -17,7 +17,7 @@ $randMin = random_int(10,59);
 $randSec = random_int(10,59);
 $timeData = $randYear . "-" . $randMon . "-" . $randDay . " " . $randHour . ":" . $randMin . ":" . $randSec;
 
-$sql = "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, `$timeData`, $inputData)";
+$sql = "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputData)";
 $result = $conn->query($sql);
 //
 echo $result;
