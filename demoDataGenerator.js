@@ -22,7 +22,7 @@ function ajax_post(url, postData, callback) {
 
 function hopeThisWorks() {
 	var fred = new Date(2012,12,12).toISOString().slice(0, 19).replace('T', ' ');
-	ajax_post("demoDataSubmitter.php","input=4444&" + ,function(response) {
+	ajax_post("demoDataSubmitter.php","input=4444&" + fred,function(response) {
 		document.write(response);
 	});
 };
