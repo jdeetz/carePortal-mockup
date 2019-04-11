@@ -8,7 +8,7 @@ if ($conn->connect_error) {
     echo("Connection failed: " . $conn->connect_error);
 }
 
-$inputData = $_GET['input'];
+$inputData = $_POST['input'];
 
 $sql = "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, current_timestamp(), $inputData)";
 $result = $conn->query($sql);
