@@ -14,7 +14,7 @@ $timeData2 = $_POST['time2'];
 $timeData = $timeData1 . " " . $timeData2;
 echo $timeData;
 
-$sql = "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, $timeData, $inputData)";
+$sql = "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, $timeData1, $inputData)";
 $result = $conn->query($sql);
 //
 echo $result;
