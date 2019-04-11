@@ -12,6 +12,7 @@ $inputData = $_POST['input'];
 $timeData1 = $_POST['time1'];
 $timeData2 = $_POST['time2'];
 $timeData = $timeData1 . " " . $timeData2;
+echo $timeData;
 
 $sql = "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, $timeData, $inputData)";
 $result = $conn->query($sql);
