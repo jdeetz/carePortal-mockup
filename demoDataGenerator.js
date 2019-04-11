@@ -17,11 +17,12 @@ function ajax_post(url, postData, callback) {
     xmlhttp.open("POST", url, true);
     xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xmlhttp.send(postData);
+    console.log(postData);
 }
 
 function hopeThisWorks() {
 	ajax_post("demoDataSubmitter.php","input=54321",function(response) {
-		console.log(response);
+		document.write(response);
 	});
 };
 
