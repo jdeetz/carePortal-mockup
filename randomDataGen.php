@@ -48,7 +48,7 @@ function generateRandData($numTimes,$forLat,$forLon) {
 		$inputLat = randFloat($minLat,$maxLat);
 		$minLon = $forLon - ($forLon / 1000);
 		$maxLon = $forLon + ($forLon / 1000);
-		$inputLon = randFloat($minLon,$maxLon);
+		$inputLon = randFloat($maxLon,$minLon);
 		$timeData = generateRandTimestamp();
 		$inputSteps = random_int(0,100);
 		$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '$inputLat', '$inputLon');";
