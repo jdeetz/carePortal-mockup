@@ -55,7 +55,7 @@ var grabData = function(type, numDays) {
 		if(type == "step") {
 			stepdata = new StepData(data);
 		} else if(type == "gps") {
-			gpsdata = new LifespaceDelta(data);
+			gpsdata = new LifeSpaceDelta(data);
 			gpsdata.render();
 		}
 	});
