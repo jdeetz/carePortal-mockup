@@ -167,8 +167,8 @@ var bedTimes = [4.1,3.8,2,5,2,2.6,3.4,5.1,4.4];
 
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-	background(255,255,255);
 	if(window.currentTab == 2) {
+		background(255,255,255);
 		noStroke();
 		fill(255,0,0,70);
 		rect(30,12,55,400);
