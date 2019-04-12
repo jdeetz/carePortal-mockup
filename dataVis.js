@@ -150,6 +150,7 @@ var LifeSpaceDelta = function(lsdata) {
 }
 
 LifeSpaceDelta.prototype.render = function(range) {
+	image(img,0,0);
 	this.data = map2dArray(this.data,0,400,0,400);
 	for(var i = 0;i<this.data.length;i++) {
 		for(var j = 0;j<this.data[i].length;j++) {
@@ -163,5 +164,5 @@ LifeSpaceDelta.prototype.render = function(range) {
 
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-	image(img,0,0);
+
 }
