@@ -1,5 +1,4 @@
 <?php
-require "creden.php";
 echo "got this far<br />";
 
 
@@ -73,6 +72,7 @@ function generateLast() {
 echo "and generateLast.....<br />";
 
 function createAndSubData() {
+	require "creden.php";
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
 	// Check connection
