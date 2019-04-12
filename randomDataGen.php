@@ -56,7 +56,7 @@ function generateRandData($numTimes,$forLat,$forLon) {
 echo "and generateRandData...<br />";
 
 function generateLast() {
-	global $sql, $conn;
+	global $sql, $conn, $result;
 	$inputData = random_int(0,6000);
 	$randYear = random_int(2018,2019);
 	$randDay = random_int(10,30);
