@@ -154,6 +154,7 @@ LifeSpaceDelta.prototype.render = function(range) {
 			fill(255,0,0,10);
 			noStroke();
 			ellipse(this.data[i][0],this.data[i][1],10,10);
+			text(this.data[i][0] + " " + this.data[i][1],this.data[i][0],this.data[i][1]);
 		}
 	}
 }
