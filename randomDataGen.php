@@ -53,16 +53,11 @@ function generateRandData($numTimes,$forLat,$forLon) {
 
 function generateLast() {
 	echo "made it to top of generateLast<br />";
-	global $sql, $conn;
-	$result = '';
+	global $sql;
 	$inputData = random_int(0,6000);
 	$timeData = generateRandTimestamp();
 	$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '37.433595', '-79.158150')";
 	$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputData)";
-	echo "made it right to where we execute the SQL...";
-	$result = $conn->multi_query($sql);
-	echo "executed the SQL apparently?<br />";
-	echo $result . " - is the result";
 }
 
 
@@ -76,7 +71,7 @@ function createAndSubData() {
 	if ($conn->connect_error) {
 	    echo("Connection failed: " . $conn->connect_error);
 	}
-	
+
 	global $homeLat, $homeLon, $workLat, $workLon, $sevenLat, $sevenLon, $krogLat, $krogLon, $kelleyLat, $kelleyLon;
 	generateRandData(5,$homeLat,$homeLon);
 	generateRandData(5,$workLat,$workLon);
@@ -86,6 +81,7 @@ function createAndSubData() {
 	echo "<br />it got all the way to where it was supposed to generateLast...<br />";
 	generateLast();
 
+	$result = $conn->multi_query($sql);
 	$conn->close();
 }
 
