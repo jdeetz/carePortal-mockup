@@ -55,7 +55,7 @@ function generateRandData($numTimes,$forLat,$forLon) {
 
 	$inputData = random_int(0,6000);
 	$timeData = generateRandTimestamp();
-	$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `lon`) VALUES (NULL, '$timeData', '37.433595', '-79.158150')";
+	$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `lon`) VALUES (NULL, '$timeData', '37.433595', '-79.158150');";
 	$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputData)";
 
 	$totalRounds = ($numTimes * 2) + 4;
