@@ -133,6 +133,29 @@ a {
 	float:right;
 }
 
+#settingsPanel, #averages, #recommended {
+	vertical-align: top;
+	width:30%;
+}
+
+#recommended p {
+	padding-bottom:7px;
+}
+
+#recommended p em {
+	font-weight:bold;
+	color:rgb(150,0,0);
+}
+
+#averages p {
+	padding-bottom:7px;
+}
+
+#averages p em {
+	font-weight:bold;
+	color:rgb(150,0,0);
+}
+
 .myButton {
 	-moz-box-shadow:inset 0px -3px 7px 0px #29bbff;
 	-webkit-box-shadow:inset 0px -3px 7px 0px #29bbff;
