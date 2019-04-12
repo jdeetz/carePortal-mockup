@@ -95,7 +95,6 @@ echo "even the createAndSubData function...<br />";
 createAndSubData();
 
 //
-echo $result;
 echo "Okay cool so it submitted probably";
 $conn->close();
 ?>
