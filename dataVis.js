@@ -117,6 +117,12 @@ var LifeSpaceData = function(data) {
 		this.data[i][0] = data[i].lat;
 		this.data[i][1] = data[i].lon;
 	}
+	this.lsDelta = new LifeSpaceDelta(this.data);
+};
+
+//DELETE THIS FUNCTION
+LifeSpaceData.prototype.render = function() {
+	this.lsDelta.render();
 };
 
 
@@ -155,5 +161,5 @@ LifeSpaceDelta.prototype.render = function(range) {
 
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-	
+
 }
