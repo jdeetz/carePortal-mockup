@@ -43,6 +43,7 @@ function generateRandTimestamp() {
 
 function generateRandData($numTimes,$forLat,$forLon) {
 	global $sql;
+	echo "we made it inside the generateRandData function";
 	for($i = 0; $i < $numTimes;$i++) {
 		$minLat = $forLat - ($forLat / 1000);
 		$maxLat = $forLat + ($forLat / 1000);
