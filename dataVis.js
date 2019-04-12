@@ -115,7 +115,7 @@ var LifeSpaceData = function(data) {
 	for(var i = 0;i<data.length;i++) {
 		this.data[i] = [];
 		this.data[i][0] = data[i].lat;
-		this.data[i][1] = data[i].long;
+		this.data[i][1] = data[i].lon;
 	}
 };
 
@@ -155,5 +155,5 @@ LifeSpaceDelta.prototype.render = function(range) {
 
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-
+	ellipse(200,200,5,5);
 }
