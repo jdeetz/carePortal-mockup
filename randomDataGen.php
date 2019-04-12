@@ -43,8 +43,9 @@ function generateRandTimestamp() {
 
 function generateRandData($numTimes,$forLat,$forLon) {
 	global $sql;
-	echo "we made it inside the generateRandData function";
+	echo "we made it inside the generateRandData function<br />";
 	for($i = 0; $i < $numTimes;$i++) {
+		echo "<br />We generating random data...<br />";
 		$minLat = $forLat - ($forLat / 1000);
 		$maxLat = $forLat + ($forLat / 1000);
 		$inputLat = randFloat($minLat,$maxLat);
@@ -82,11 +83,11 @@ function generateLast() {
 function createAndSubData() {
 	echo "it even ran the createAndSubData function";
 	global $homeLat, $homeLon, $workLat, $workLon, $sevenLat, $sevenLon, $krogLat, $krogLon, $kelleyLat, $kelleyLon;
-	generateRandData(500,$homeLat,$homeLon);
-	generateRandData(500,$workLat,$workLon);
-	generateRandData(500,$sevenLat,$sevenLon);
-	generateRandData(500,$krogLat,$krogLon);
-	generateRandData(500,$kelleyLat,$kelleyLon);
+	generateRandData(5,$homeLat,$homeLon);
+	generateRandData(5,$workLat,$workLon);
+	generateRandData(5,$sevenLat,$sevenLon);
+	generateRandData(5,$krogLat,$krogLon);
+	generateRandData(5,$kelleyLat,$kelleyLon);
 	echo "<br />it got all the way to where it was supposed to generateLast...<br />";
 	generateLast();
 }
