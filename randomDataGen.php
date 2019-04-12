@@ -47,6 +47,7 @@ function generateRandData($numTimes,$forLat,$forLon) {
 		$inputSteps = random_int(0,100);
 		$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `lon`) VALUES (NULL, '$timeData', '$inputLat', '$inputLon');";
 		$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputSteps);";
+		echo "have run " . $i . " times"
 		$roundNum = 2 + $i;
 	}
 
@@ -74,11 +75,11 @@ function createAndSubData() {
 	$kelleyLat = 37.428052;
 	$kelleyLon = -79.172024;
 
-	generateRandData(5,$homeLat,$homeLon);
-	generateRandData(5,$workLat,$workLon);
-	generateRandData(5,$sevenLat,$sevenLon);
-	generateRandData(5,$krogLat,$krogLon);
-	generateRandData(5,$kelleyLat,$kelleyLon);
+	generateRandData(721,$homeLat,$homeLon);
+	generateRandData(1283,$workLat,$workLon);
+	generateRandData(79,$sevenLat,$sevenLon);
+	generateRandData(11,$krogLat,$krogLon);
+	generateRandData(59,$kelleyLat,$kelleyLon);
 }
 
 
