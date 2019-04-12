@@ -27,7 +27,6 @@ function randFloat($min,$max) {
 	return mt_rand($min,$max)/1000000;
 }
 
-echo "randFloat function created<br />";
 
 function generateRandTimestamp() {
 	$randYear = random_int(2018,2019);
@@ -40,7 +39,6 @@ function generateRandTimestamp() {
 	return $timeData;
 }
 
-echo "randTimestamp also...<br />";
 
 function generateRandData($numTimes,$forLat,$forLon) {
 	global $sql;
@@ -58,9 +56,9 @@ function generateRandData($numTimes,$forLat,$forLon) {
 	}
 }
 
-echo "and generateRandData...<br />";
 
 function generateLast() {
+	echo "made it to top of generateLast<br />";
 	global $sql, $conn;
 	$result = '';
 	$inputData = random_int(0,6000);
@@ -73,10 +71,11 @@ function generateLast() {
 	$timeData = $randYear . "-" . $randMon . "-" . $randDay . " " . $randHour . ":" . $randMin . ":" . $randSec;
 	$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '37.433595', '-79.158150')";
 	$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputData)";
+	echo "made it right to where we execute the SQL...";
 	$result = $conn->multi_query($sql);
+	echo "executed the SQL apparently?";
 }
 
-echo "and generateLast.....<br />";
 
 function createAndSubData() {
 	echo "it even ran the createAndSubData function";
@@ -86,7 +85,7 @@ function createAndSubData() {
 	generateRandData(500,$sevenLat,$sevenLon);
 	generateRandData(500,$krogLat,$krogLon);
 	generateRandData(500,$kelleyLat,$kelleyLon);
-	echo "<br />it got all the way to where it was supposed to generateLast...";
+	echo "<br />it got all the way to where it was supposed to generateLast...<br />";
 	generateLast();
 }
 
