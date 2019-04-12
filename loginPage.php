@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 	<head>
 		<meta charset="utf-8">
-		<title>Care Ecosystem Portal Demo</title>
+		<title>Please Login</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="theme-color" content="#D2E6FF" />
 		<meta name="Description" content="Care Ecosystem is a functional monitoring research project" />
@@ -13,21 +13,11 @@
 			<div style="text-align:center;width:100%">
 				<img src="ceLogo.webp" width="500" alt="Care Ecosystem logo" />
 			</div>
-			<nav> <!-- landmark for screen readers -->
-				<div id="navigation">
-					<div class="navTab">
-						<h1><a href="index.php">By The Numbers</a></h1>
-					</div>
-					<div class="navTab active">
-						<h1>Insights</h1>
-					</div>
-					<div class="navTab">
-						<h1><a href="settings.html">Settings</a></h1>
-					</div>
-				</div>
-			</nav>
 			<main> <!-- landmark for screen readers -->
-				<div id="content"></div> <!-- This also contains the canvas used for rendering the graphs -->
+				<div id="content">
+					<input type="text" placeholder="Username" />
+					<input type="password" placeholder="Password" />
+				</div> <!-- This also contains the canvas used for rendering the graphs -->
 			</main>
 		</div>
 
@@ -36,14 +26,6 @@
 		<link rel="stylesheet" type="text/css" href="style.css"></link> <!-- Relative link to external stylesheet -->
 		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> <!-- adding a font from Google's font library -->
 		<script type="text/javascript" src="prefStorage.js" async></script> <!-- handles local storage of settings -->
-		<script>
-			window.currentTab = 2;
-			if('serviceWorker' in navigator) {
-			  navigator.serviceWorker
-			           .register('/prefStorage.js')
-			           .then(function() { console.log("Service Worker Registered"); });
-			}
-		</script>
 		<script type="text/javascript" src="dataVis.js" async></script> <!-- Relative link to graph drawing script, which leverages p5.js -->
 		<script type="text/javascript" src="dataHandler.js" async></script> <!-- Relative link to data handler script -->
 	</body>
