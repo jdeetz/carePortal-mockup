@@ -4,9 +4,11 @@ This is the code for the graph rendering functions, leveraging p5.js
 
 
 new p5(); //Create p5 global reference so that math functions like random() are accessible outside of setup()
+var img;
 function setup() {
 	var canvas = createCanvas(400,400); //Canvas instantiation - dimensions of 400x400 pixels used for the sake of testing
 	canvas.parent('content'); //Moves graph from end-of-body to an in-page node for inline display
+	img = loadImage('backgroundMap.png');
 }
 
 //Finds lowest value in a 1-d numerical array
@@ -148,6 +150,8 @@ var LifeSpaceDelta = function(lsdata) {
 }
 
 LifeSpaceDelta.prototype.render = function(range) {
+	background(255,255,255);
+	image("backgroundMap.png",0,0,400,400);
 	this.data = map2dArray(this.data,0,400,0,400);
 	for(var i = 0;i<this.data.length;i++) {
 		for(var j = 0;j<this.data[i].length;j++) {
@@ -161,5 +165,5 @@ LifeSpaceDelta.prototype.render = function(range) {
 
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-
+	image(img,0,0);
 }
