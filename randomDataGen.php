@@ -44,11 +44,11 @@ function generateRandData($numTimes,$forLat,$forLon) {
 
 	#This is the part that actually generates a bunch of random data, equivalent to how much we asked it to up above
 	for($i = 0; $i < $numTimes;$i++) {
-		$minLat = $forLat - ($forLat / 100000);
-		$maxLat = $forLat + ($forLat / 100000);
+		$minLat = $forLat - ($forLat / 80000);
+		$maxLat = $forLat + ($forLat / 80000);
 		$inputLat = randFloat($minLat,$maxLat);
-		$minLon = $forLon - ($forLon / 100000);
-		$maxLon = $forLon + ($forLon / 100000);
+		$minLon = $forLon - ($forLon / 80000);
+		$maxLon = $forLon + ($forLon / 80000);
 		$inputLon = randFloat($maxLon,$minLon);
 		$timeData = generateRandTimestamp();
 		$inputSteps = random_int(0,100);

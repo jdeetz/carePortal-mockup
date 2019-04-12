@@ -123,12 +123,6 @@ var LifeSpaceData = function(data) {
 //DELETE THIS FUNCTION
 LifeSpaceData.prototype.render = function() {
 	this.lsDelta.render();
-	this.sdata = map2dArray(this.data,0,400,0,400);
-	for(var i = 0;i<this.data.length;i++) {
-		for(var j = 0;j<this.data[i].length;j++) {
-			text(this.data[i][0] + " " + this.data[i][1],this.sdata[i][0],this.sdata[i][1]);
-		}
-	}
 };
 
 
