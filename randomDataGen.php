@@ -1,7 +1,13 @@
 <?php
+require "creden.php";
 echo "got this far<br />";
 
-
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    echo("Connection failed: " . $conn->connect_error);
+}
 
 $homeLat = 37.433595;
 $homeLon = -79.158150;
@@ -13,8 +19,7 @@ $krogLat = 37.442378;
 $krogLon = -79.204132;
 $kelleyLat = 37.428052;
 $kelleyLon = -79.172024;
-$sql = '';
-$result = '';
+$sql = ;
 
 function randFloat($min,$max) {
 	$min = $min * 1000000;
@@ -56,7 +61,7 @@ function generateRandData($numTimes,$forLat,$forLon) {
 echo "and generateRandData...<br />";
 
 function generateLast() {
-	global $sql, $conn, $result;
+	global $sql, $conn;
 	$inputData = random_int(0,6000);
 	$randYear = random_int(2018,2019);
 	$randDay = random_int(10,30);
@@ -73,13 +78,6 @@ function generateLast() {
 echo "and generateLast.....<br />";
 
 function createAndSubData() {
-	require "creden.php";
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-	    echo("Connection failed: " . $conn->connect_error);
-	}
 	echo "it even ran the createAndSubData function";
 	global $homeLat, $homeLon, $workLat, $workLon, $sevenLat, $sevenLon, $krogLat, $krogLon, $kelleyLat, $kelleyLon;
 	generateRandData(500,$homeLat,$homeLon);
