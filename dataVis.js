@@ -150,8 +150,6 @@ var LifeSpaceDelta = function(lsdata) {
 }
 
 LifeSpaceDelta.prototype.render = function(range) {
-	background(255,255,255);
-	image("backgroundMap.png",0,0,400,400);
 	this.data = map2dArray(this.data,0,400,0,400);
 	for(var i = 0;i<this.data.length;i++) {
 		for(var j = 0;j<this.data[i].length;j++) {
