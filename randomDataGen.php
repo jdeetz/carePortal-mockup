@@ -14,6 +14,7 @@ $krogLon = -79.204132;
 $kelleyLat = 37.428052;
 $kelleyLon = -79.172024;
 $sql = '';
+$result = '';
 
 function randFloat($min,$max) {
 	$min = $min * 1000000;
