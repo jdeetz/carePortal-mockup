@@ -29,6 +29,13 @@ function generateRandData($numTimes,$forLat,$forLon) {
 	if ($conn->connect_error) {
 	    echo("Connection failed: " . $conn->connect_error);
 	}
+
+	$inputData = random_int(0,6000);
+	$timeData = generateRandTimestamp();
+	$sql = "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '37.433595', '-79.158150');";
+	$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputData);";
+
+
 	for($i = 0; $i < $numTimes;$i++) {
 		$minLat = $forLat - ($forLat / 1000);
 		$maxLat = $forLat + ($forLat / 1000);
@@ -40,7 +47,7 @@ function generateRandData($numTimes,$forLat,$forLon) {
 		echo $timeData;
 		$inputSteps = random_int(0,100);
 		$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '$inputLat', '$inputLon');";
-		$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputSteps)";
+		$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputSteps);";
 	}
 
 	$inputData = random_int(0,6000);
