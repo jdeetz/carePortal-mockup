@@ -1,16 +1,5 @@
 <?php
 
-$homeLat = 37.433595;
-$homeLon = -79.158150;
-$workLat = 37.436131;
-$workLon = -79.170871;
-$sevenLat = 37.434644;
-$sevenLon = -79.168029;
-$krogLat = 37.442378;
-$krogLon = -79.204132;
-$kelleyLat = 37.428052;
-$kelleyLon = -79.172024;
-$sql = '';
 
 function randFloat($min,$max) {
 	$min = $min * 1000000;
@@ -32,10 +21,15 @@ function generateRandTimestamp() {
 
 
 function generateRandData($numTimes,$forLat,$forLon) {
-	global $sql;
-	echo "we made it inside the generateRandData function<br />";
+	require "creden.php";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    echo("Connection failed: " . $conn->connect_error);
+	}
 	for($i = 0; $i < $numTimes;$i++) {
-		echo "<br />We generating random data...<br />";
 		$minLat = $forLat - ($forLat / 1000);
 		$maxLat = $forLat + ($forLat / 1000);
 		$inputLat = randFloat($minLat,$maxLat);
@@ -48,44 +42,36 @@ function generateRandData($numTimes,$forLat,$forLon) {
 		$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '$inputLat', '$inputLon');";
 		$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputSteps)";
 	}
-}
 
-
-function generateLast() {
-	echo "made it to top of generateLast<br />";
-	global $sql;
 	$inputData = random_int(0,6000);
 	$timeData = generateRandTimestamp();
 	$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '37.433595', '-79.158150')";
 	$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputData)";
-}
-
-
-function createAndSubData() {
-	global $sql;
-	require "creden.php";
-
-	// Create connection
-	$conn = new mysqli($servername, $username, $password, $dbname);
-	// Check connection
-	if ($conn->connect_error) {
-	    echo("Connection failed: " . $conn->connect_error);
-	}
-
-	global $homeLat, $homeLon, $workLat, $workLon, $sevenLat, $sevenLon, $krogLat, $krogLon, $kelleyLat, $kelleyLon;
-	generateRandData(5,$homeLat,$homeLon);
-	generateRandData(5,$workLat,$workLon);
-	generateRandData(5,$sevenLat,$sevenLon);
-	generateRandData(5,$krogLat,$krogLon);
-	generateRandData(5,$kelleyLat,$kelleyLon);
-	echo "<br />it got all the way to where it was supposed to generateLast...<br />";
-	generateLast();
 
 	$result = $conn->multi_query($sql);
 	$conn->close();
 }
 
-echo "even the createAndSubData function...<br />";
+
+function createAndSubData() {
+	$homeLat = 37.433595;
+	$homeLon = -79.158150;
+	$workLat = 37.436131;
+	$workLon = -79.170871;
+	$sevenLat = 37.434644;
+	$sevenLon = -79.168029;
+	$krogLat = 37.442378;
+	$krogLon = -79.204132;
+	$kelleyLat = 37.428052;
+	$kelleyLon = -79.172024;
+
+	generateRandData(5,$homeLat,$homeLon);
+	generateRandData(5,$workLat,$workLon);
+	generateRandData(5,$sevenLat,$sevenLon);
+	generateRandData(5,$krogLat,$krogLon);
+	generateRandData(5,$kelleyLat,$kelleyLon);
+}
+
 
 createAndSubData();
 
