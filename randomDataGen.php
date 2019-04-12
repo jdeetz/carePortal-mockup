@@ -47,7 +47,7 @@ function generateRandData($numTimes,$forLat,$forLon) {
 		$inputSteps = random_int(0,100);
 		$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `lon`) VALUES (NULL, '$timeData', '$inputLat', '$inputLon');";
 		$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputSteps);";
-		echo "have run " . $i . " times"
+		echo "have run " . $i . " times";
 		$roundNum = 2 + $i;
 	}
 
