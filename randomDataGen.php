@@ -62,7 +62,7 @@ function generateLast() {
 
 
 function createAndSubData() {
-
+	global $sql;
 	require "creden.php";
 
 	// Create connection
