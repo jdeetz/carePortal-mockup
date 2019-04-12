@@ -24,6 +24,16 @@ h1 {
 	margin:5px;
 }
 
+#content h1 {
+	font-size:2em;
+}
+
+#insights {
+	width:40%;
+	float:left;
+	display:inline-block;
+}
+
 #login h1 {
 	font-size:1.5em;
 	margin:10px;

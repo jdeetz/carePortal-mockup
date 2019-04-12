@@ -161,8 +161,29 @@ LifeSpaceDelta.prototype.render = function(range) {
 	}
 }
 
+var wakeTimes = [11,12,11,13,12,11,12,13,12.5];
+var bedTimes = [4.1,3.8,2,5,2,2.6,3.4,5.1,4.4];
+
 
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-
+	background(255,255,255);
+	if(window.currentTab == 2) {
+		noStroke();
+		fill(255,0,0,70);
+		rect(30,12,55,400);
+		rect(183,12,38,400);
+		for(var i = 0;i<23;i++) {
+			stroke(0);
+			strokeWeight(1);
+			line((width/24) * i,15,(width/24) * i,400);
+			textSize(9);
+			text(i + ":00",(width/24) * i,(i%2)*10);
+		}
+		for(var i = 0;i<wakeTimes.length;i++) {
+			stroke(0,0,255);
+			strokeWeight(5);
+			line((width/24) * bedTimes[i],((height/wakeTimes.length) * i)+15,(width/24) * wakeTimes[i],((height/wakeTimes.length) * i)+15);
+		}
+	}
 }
