@@ -1,13 +1,4 @@
 <?php
-require "creden.php";
-echo "got this far<br />";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    echo("Connection failed: " . $conn->connect_error);
-}
 
 $homeLat = 37.433595;
 $homeLon = -79.158150;
@@ -76,7 +67,16 @@ function generateLast() {
 
 
 function createAndSubData() {
-	echo "it even ran the createAndSubData function";
+
+	require "creden.php";
+
+	// Create connection
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	// Check connection
+	if ($conn->connect_error) {
+	    echo("Connection failed: " . $conn->connect_error);
+	}
+	
 	global $homeLat, $homeLon, $workLat, $workLon, $sevenLat, $sevenLon, $krogLat, $krogLon, $kelleyLat, $kelleyLon;
 	generateRandData(5,$homeLat,$homeLon);
 	generateRandData(5,$workLat,$workLon);
@@ -85,13 +85,12 @@ function createAndSubData() {
 	generateRandData(5,$kelleyLat,$kelleyLon);
 	echo "<br />it got all the way to where it was supposed to generateLast...<br />";
 	generateLast();
+
+	$conn->close();
 }
 
 echo "even the createAndSubData function...<br />";
 
 createAndSubData();
 
-//
-echo "Okay cool so it submitted probably";
-$conn->close();
 ?>
