@@ -33,8 +33,10 @@ function generateRandData($numTimes,$forLat,$forLon) {
 	$inputData = random_int(0,6000);
 	$timeData = generateRandTimestamp();
 	$sql = "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '37.433595', '-79.158150');";
+	echo "SQL round 1: " . $sql . "<br /><br />";
 	$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputData);";
 
+	echo "SQL round 2: " . $sql . "<br /><br />";
 
 	for($i = 0; $i < $numTimes;$i++) {
 		$minLat = $forLat - ($forLat / 1000);
@@ -44,16 +46,20 @@ function generateRandData($numTimes,$forLat,$forLon) {
 		$maxLon = $forLon + ($forLon / 1000);
 		$inputLon = randFloat($maxLon,$minLon);
 		$timeData = generateRandTimestamp();
-		echo $timeData;
 		$inputSteps = random_int(0,100);
 		$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '$inputLat', '$inputLon');";
 		$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputSteps);";
+		$roundNum = 2 + $i;
+		echo "SQL round " . $roundNum . ": " . $sql . "<br /><br />";
 	}
 
 	$inputData = random_int(0,6000);
 	$timeData = generateRandTimestamp();
 	$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '37.433595', '-79.158150')";
 	$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputData)";
+
+	$totalRounds = ($numTimes * 2) + 4;
+	echo "<br /><br />Final SQL, round " . $numTimes . ": " . $sql . "<br /><br />";
 
 	$result = $conn->multi_query($sql);
 	$conn->close();
