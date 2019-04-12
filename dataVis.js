@@ -137,8 +137,8 @@ Stepgraph.prototype.render = function(range) {
 
 }
 
-var LifeSpaceDelta = function(lifeSpaceData) {
-	this.data = lifeSpaceData;
+var LifeSpaceDelta = function(lsdata) {
+	this.data = lsdata;
 }
 
 LifeSpaceDelta.prototype.render = function(range) {
@@ -155,5 +155,5 @@ LifeSpaceDelta.prototype.render = function(range) {
 
 //This is the draw loop, it's called recurrently at ~30fps
 function draw() {
-	ellipse(200,200,5,5);
+	
 }
