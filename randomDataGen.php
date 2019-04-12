@@ -37,6 +37,7 @@ function generateRandTimestamp() {
 	$randSec = random_int(10,59);
 	$timeData = $randYear . "-" . $randMon . "-" . $randDay . " " . $randHour . ":" . $randMin . ":" . $randSec;
 	return $timeData;
+	echo "made a random timestamp - " . $timeData;
 }
 
 
