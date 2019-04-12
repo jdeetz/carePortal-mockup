@@ -70,7 +70,8 @@ function generateLast() {
 	$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputData)";
 	echo "made it right to where we execute the SQL...";
 	$result = $conn->multi_query($sql);
-	echo "executed the SQL apparently?";
+	echo "executed the SQL apparently?<br />";
+	echo $result . " - is the result";
 }
 
 
