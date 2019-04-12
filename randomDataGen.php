@@ -65,13 +65,7 @@ function generateLast() {
 	global $sql, $conn;
 	$result = '';
 	$inputData = random_int(0,6000);
-	$randYear = random_int(2018,2019);
-	$randDay = random_int(10,30);
-	$randMon = "0" . random_int(3,4);
-	$randHour = random_int(10,23);
-	$randMin = random_int(10,59);
-	$randSec = random_int(10,59);
-	$timeData = $randYear . "-" . $randMon . "-" . $randDay . " " . $randHour . ":" . $randMin . ":" . $randSec;
+	$timeData = generateRandTimestamp();
 	$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '37.433595', '-79.158150')";
 	$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputData)";
 	echo "made it right to where we execute the SQL...";
