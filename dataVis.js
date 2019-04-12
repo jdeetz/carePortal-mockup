@@ -154,7 +154,7 @@ LifeSpaceDelta.prototype.render = function(range) {
 	this.data = map2dArray(this.data,0,400,0,400);
 	for(var i = 0;i<this.data.length;i++) {
 		for(var j = 0;j<this.data[i].length;j++) {
-			fill(255,0,0,10);
+			fill(0,255,0,10);
 			noStroke();
 			ellipse(this.data[i][0],this.data[i][1],10,10);
 		}
