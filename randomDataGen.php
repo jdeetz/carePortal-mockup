@@ -28,7 +28,6 @@ function generateRandTimestamp() {
 	$randSec = random_int(10,59);
 	$timeData = $randYear . "-" . $randMon . "-" . $randDay . " " . $randHour . ":" . $randMin . ":" . $randSec;
 	return $timeData;
-	echo "made a random timestamp - " . $timeData;
 }
 
 
@@ -44,6 +43,7 @@ function generateRandData($numTimes,$forLat,$forLon) {
 		$maxLon = $forLon + ($forLon / 1000);
 		$inputLon = randFloat($maxLon,$minLon);
 		$timeData = generateRandTimestamp();
+		echo $timeData;
 		$inputSteps = random_int(0,100);
 		$sql .= "INSERT INTO DEMO_GPS (`id`, `times`, `lat`, `long`) VALUES (NULL, '$timeData', '$inputLat', '$inputLon');";
 		$sql .= "INSERT INTO DEMO_STEP (`id`, `times`, `steps`) VALUES (NULL, '$timeData', $inputSteps)";
