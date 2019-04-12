@@ -111,7 +111,12 @@ var ActivityData = function(data) {
 
 //And for lifeSpace(tm) data
 var LifeSpaceData = function(data) {
-	this.data = data;
+	this.data = [];
+	for(var i = 0;i<data.length;i++) {
+		this.data[i] = [];
+		this.data[i][0] = data[i].lat;
+		this.data[i][1] = data[i].long;
+	}
 };
 
 
@@ -132,11 +137,11 @@ Stepgraph.prototype.render = function(range) {
 
 }
 
-var LifespaceDelta = function(lifeSpaceData) {
-	this.data = data;
+var LifeSpaceDelta = function(lifeSpaceData) {
+	this.data = lifeSpaceData;
 }
 
-LifespaceDelta.prototype.render = function(range) {
+LifeSpaceDelta.prototype.render = function(range) {
 	this.data = map2dArray(this.data,0,400,0,400);
 	for(var i = 0;i<this.data.length;i++) {
 		for(var j = 0;j<this.data[i].length;j++) {

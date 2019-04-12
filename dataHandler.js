@@ -18,6 +18,7 @@ function ajax_get(url, callback) {
     xmlhttp.send();
 }
 var stepdata;
+var gpsdata;
 
 //These are the database querying functions, they leverage the above and user defined variables to grab specific ranges of data
 //and store them in the custom data types defined in the dataVis.js file
@@ -54,7 +55,8 @@ var grabData = function(type, numDays) {
 		if(type == "step") {
 			stepdata = new StepData(data);
 		} else if(type == "gps") {
-			gpsdata = data;
+			gpsdata = new LifespaceDelta(data);
+			gpsdata.render();
 		}
 	});
 };
