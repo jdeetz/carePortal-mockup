@@ -114,10 +114,12 @@ var ActivityData = function(data) {
 //And for lifeSpace(tm) data
 var LifeSpaceData = function(data) {
 	this.data = [];
+	this.gMapData = [];
 	for(var i = 0;i<data.length;i++) {
 		this.data[i] = [];
 		this.data[i][0] = data[i].lat;
 		this.data[i][1] = data[i].lon;
+		this.gMapData[i] = new google.maps.LatLng(data[i].lat,data[i].lon);
 	}
 	this.lsDelta = new LifeSpaceDelta(this.data);
 };
@@ -125,6 +127,10 @@ var LifeSpaceData = function(data) {
 //DELETE THIS FUNCTION
 LifeSpaceData.prototype.render = function() {
 	this.lsDelta.render();
+};
+
+LifeSpaceData.prototype.getAsGmap = function() {
+	return this.gMapData;
 };
 
 
