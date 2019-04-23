@@ -121,12 +121,12 @@ var LifeSpaceData = function(data) {
 		this.data[i][1] = data[i].lon;
 		this.gMapData[i] = new google.maps.LatLng(data[i].lat,data[i].lon);
 	}
-	this.lsDelta = new LifeSpaceDelta(this.data);
+	//this.lsDelta = new LifeSpaceDelta(this.data);
 };
 
 //DELETE THIS FUNCTION
 LifeSpaceData.prototype.render = function() {
-	this.lsDelta.render();
+	//this.lsDelta.render();
 };
 
 LifeSpaceData.prototype.getAsGmap = function() {
