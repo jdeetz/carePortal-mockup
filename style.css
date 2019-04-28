@@ -71,6 +71,7 @@ a {
 	border-radius:0px 0px 10px 10px;
 	overflow:auto;
 	padding:25px;
+	background-color:#3C5A99;
 }
 @keyframes saveColor {
 	from {background-color:green;color:white;}

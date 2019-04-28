@@ -133,6 +133,11 @@ LifeSpaceData.prototype.getAsGmap = function() {
 	return this.gMapData;
 };
 
+function getPoints() {
+	grabData("gps",30);
+	return gpsdata.getAsGmap();
+}
+
 
 
 var Heatmap = function(activityData) {
