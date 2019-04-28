@@ -1,5 +1,5 @@
 body {
-	background-color: rgb(210,230,255);
+	background-color: #3C5A99;
 	color:rgb(20,20,20); /* Primary font color is a very dark gray */
 	/* Chosen background and font colors, commented out during development */
 
@@ -71,7 +71,6 @@ a {
 	border-radius:0px 0px 10px 10px;
 	overflow:auto;
 	padding:25px;
-	background-color:#3C5A99;
 }
 @keyframes saveColor {
 	from {background-color:green;color:white;}
