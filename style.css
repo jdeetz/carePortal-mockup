@@ -166,43 +166,48 @@ a {
 	color:rgb(150,0,0);
 }
 
-.myButton {
-	-moz-box-shadow:inset 0px -3px 7px 0px #29bbff;
-	-webkit-box-shadow:inset 0px -3px 7px 0px #29bbff;
-	box-shadow:inset 0px -3px 7px 0px #29bbff;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
-	background:-moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
-	background:-webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
-	background:-o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
-	background:-ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
-	background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
-	background-color:#2dabf9;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
-	border-radius:3px;
-	border:1px solid #0b0e07;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	padding:9px 23px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #263666;
-	margin:10px;
+.loginbutton {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 4px 16px;
+    border: 1px solid #334c82;
+    border-radius: 8px;
+    background: #608ef5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#608ef5), to(#334c82));
+    background: -moz-linear-gradient(top, #608ef5, #334c82);
+    background: linear-gradient(to bottom, #608ef5, #334c82);
+    text-shadow: #1e2d4d 1px 1px 1px;
+    font: normal normal bold 20px arial;
+    color: #ffffff;
+    text-decoration: none;
 }
-.myButton:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
-	background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
-	background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
-	background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
-	background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
-	background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
-	background-color:#0688fa;
+.loginbutton:hover,
+.loginbutton:focus {
+    border: 1px solid #3c5999;
+    background: #73aaff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#73aaff), to(#3d5b9c));
+    background: -moz-linear-gradient(top, #73aaff, #3d5b9c);
+    background: linear-gradient(to bottom, #73aaff, #3d5b9c);
+    color: #ffffff;
+    text-decoration: none;
 }
-.myButton:active {
-	position:relative;
-	top:1px;
+.loginbutton:active {
+    background: #334c82;
+    background: -webkit-gradient(linear, left top, left bottom, from(#334c82), to(#334c82));
+    background: -moz-linear-gradient(top, #334c82, #334c82);
+    background: linear-gradient(to bottom, #334c82, #334c82);
+}
+.loginbutton:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAABNUlEQVRIibWVMW7DMAxFn1XvuUPP0LVLj5EhQG8QIHsKD0WnwkcIkMGnKNAh98gdkjmWO9gyWJqyazklIOibpPXJL8nOAMc/Wt7NXhA9AmvgYeZaNVABZ72m7mAPNIljL9ZxsgNpofJsZgcNv7v2ksDah9S9cdaDD4y6AhUbw1h+XWWMxIppOwIn7VwikVP41fJriayKY7K8AduJnIFE2izCHPikPZKrifeBtiU5Ctojp/1hlF28HMnph7zJVvVOxBzwQSvLDXgCviNFe+Ad+EqRaLY5Md9dIkkQLBDoWMC5ICkiOT22vkXSLIluwA64ApdITo8lge5kan+Kv+TJ4NyLpvEBeNH+1FNk4Q3wrP1LJIqZ+bkOjEskstbx1imqu7kxYlNWCxyVqOrm1J/+QNox7RfjH9DMfYXFQ5R3AAAAAElFTkSuQmCC") no-repeat left center transparent;
+    background-size: 100% 100%;
 }
